@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://xyu1nofmqxa2"]
 
-[ext_resource type="Script" uid="uid://djamw5jkpwagi" path="res://player/cubio.gd" id="1"]
-[ext_resource type="ArrayMesh" uid="uid://ba7dqpj07mlsy" path="res://models/cube.mesh" id="2"]
-[ext_resource type="Script" uid="uid://c34pvm3p8cwk5" path="res://player/follow_camera.gd" id="3"]
-[ext_resource type="Material" uid="uid://dmyd46k7flepi" path="res://models/white_cube_material.tres" id="4"]
+[ext_resource type="Script" uid="uid://djamw5jkpwagi" path="res://kinematic_character_3d/player/cubio.gd" id="1"]
+[ext_resource type="ArrayMesh" uid="uid://ba7dqpj07mlsy" path="res://kinematic_character_3d/models/cube.mesh" id="2"]
+[ext_resource type="Script" uid="uid://c34pvm3p8cwk5" path="res://kinematic_character_3d/player/follow_camera.gd" id="3"]
+[ext_resource type="Material" uid="uid://dmyd46k7flepi" path="res://kinematic_character_3d/models/white_cube_material.tres" id="4"]
 
 [sub_resource type="BoxShape3D" id="1"]
 margin = 0.001
