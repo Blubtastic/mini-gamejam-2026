@@ -10,13 +10,13 @@ config_version=5
 
 [application]
 
-config/name="Kinematic Character 3D"
+config/name="Mini Game Jam 2026"
 config/description="Kinematic character demo for 3D using a cube for the character.
 This is similar to the 3D platformer demo."
 config/tags=PackedStringArray("3d", "demo", "official", "physics")
 run/main_scene="res://level.tscn"
-config/features=PackedStringArray("4.6")
-config/icon="res://icon.webp"
+config/features=PackedStringArray("4.6", "GL Compatibility")
+config/icon="res://icon.svg"
 
 [debug]
 
@@ -89,6 +89,9 @@ common/physics_interpolation=true
 
 [rendering]
 
+rendering_device/driver.windows="d3d12"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
 lights_and_shadows/directional_shadow/soft_shadow_filter_quality=3
 textures/default_filters/anisotropic_filtering_level=4
 anti_aliasing/quality/msaa_3d=2
