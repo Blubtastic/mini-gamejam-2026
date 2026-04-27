@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://coamsoo4lxmn8"]
 
-[ext_resource type="MeshLibrary" uid="uid://bctluxekre5wf" path="res://cubelib.tres" id="1"]
-[ext_resource type="PackedScene" uid="uid://0o0d2gt3mul" path="res://player/cubio.tscn" id="2"]
-[ext_resource type="ArrayMesh" uid="uid://h65pkfq5sgmy" path="res://models/cube.mesh" id="3"]
-[ext_resource type="PackedScene" uid="uid://ieyca5ld5mq6" path="res://models/mushroom.glb" id="5"]
-[ext_resource type="Script" uid="uid://b0k758e0u133q" path="res://level.gd" id="6"]
-[ext_resource type="Texture2D" uid="uid://dd862j3cyjndh" path="res://models/white_wood.png" id="6_slp5m"]
-[ext_resource type="PackedScene" uid="uid://depks11gd2ns3" path="res://cube_rigidbody.tscn" id="7"]
+[ext_resource type="MeshLibrary" uid="uid://bctluxekre5wf" path="res://rigidbody_character_3d/cubelib.tres" id="1"]
+[ext_resource type="PackedScene" uid="uid://0o0d2gt3mul" path="res://rigidbody_character_3d/player/cubio.tscn" id="2"]
+[ext_resource type="ArrayMesh" uid="uid://h65pkfq5sgmy" path="res://rigidbody_character_3d/models/cube.mesh" id="3"]
+[ext_resource type="PackedScene" uid="uid://ieyca5ld5mq6" path="res://rigidbody_character_3d/models/mushroom.glb" id="5"]
+[ext_resource type="Script" uid="uid://b0k758e0u133q" path="res://rigidbody_character_3d/level.gd" id="6"]
+[ext_resource type="Texture2D" uid="uid://dd862j3cyjndh" path="res://rigidbody_character_3d/models/white_wood.png" id="6_slp5m"]
+[ext_resource type="PackedScene" uid="uid://depks11gd2ns3" path="res://rigidbody_character_3d/cube_rigidbody.tscn" id="7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fiix7"]
 sky_top_color = Color(0.36, 0.20772, 0.1908, 1)
@@ -154,7 +154,7 @@ autoplay = &"side"
 [node name="Princess" type="Area3D" parent="." unique_id=866895096]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.25, 3)
 
-[node name="Mushroom" parent="Princess" unique_id=222416549 instance=ExtResource("5")]
+[node name="Mushroom" parent="Princess" unique_id=1055229843 instance=ExtResource("5")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Princess" unique_id=1596790789]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

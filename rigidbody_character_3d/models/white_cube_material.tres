@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://70g5qly1c5su"]
 
-[ext_resource type="Texture2D" uid="uid://dd862j3cyjndh" path="res://models/white_wood.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://dd862j3cyjndh" path="res://rigidbody_character_3d/models/white_wood.png" id="1"]
 
 [resource]
 resource_name = "WhiteCubeMaterial"
