@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://n408x8i2cl2s"]
 
 [ext_resource type="PackedScene" uid="uid://bh671ucog6dlf" path="res://assets/teknostallen_only.blend" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://0o0d2gt3mul" path="res://rigidbody_character_3d/player/cubio.tscn" id="2_0xm2m"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig7tw"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -11,6 +12,7 @@ sky_material = SubResource("ProceduralSkyMaterial_ig7tw")
 
 [sub_resource type="Environment" id="Environment_h2yge"]
 background_mode = 2
+background_energy_multiplier = 2.0
 sky = SubResource("Sky_0xm2m")
 tonemap_mode = 2
 
@@ -25,18 +27,22 @@ environment = SubResource("Environment_h2yge")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1811788517]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_color = Color(1, 0.99392694, 0.91586673, 1)
+light_energy = 0.2
 shadow_enabled = true
 
-[node name="teknostallen_only" parent="." unique_id=1812434193 instance=ExtResource("1_ig7tw")]
+[node name="teknostallen_only" parent="." unique_id=915765002 instance=ExtResource("1_ig7tw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, -31, -12)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=306762864]
-transform = Transform3D(-0.47507134, -0.15525082, 0.8661434, 0, 0.98431283, 0.17643194, -0.8799473, 0.08381776, -0.46761882, -61.404083, 32.49934, 9.46505)
+transform = Transform3D(-0.47507137, -0.3368122, 0.81293595, 0, 0.9238461, 0.3827641, -0.8799473, 0.18184024, -0.43889284, 3.263977, 3.8157787, -1.7621762)
 
 [node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=878637434]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.973724, 32.870296, 12.070673)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=1583020238]
 shape = SubResource("SphereShape3D_ig7tw")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D" unique_id=748957367]
 mesh = SubResource("SphereMesh_0xm2m")
+
+[node name="RigidDynamicBody3D" parent="." unique_id=1921766831 instance=ExtResource("2_0xm2m")]
