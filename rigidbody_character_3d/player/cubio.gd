@@ -2,6 +2,7 @@ extends RigidBody3D
 
 @onready var shape_cast: ShapeCast3D = $ShapeCast3D
 @onready var start_position := position
+var rotation_speed: float = 10
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed(&"exit"):
@@ -22,13 +23,18 @@ func _physics_process(delta: float) -> void:
 	# Air movement.
 	apply_central_impulse(dir.normalized() * 5.0 * delta)
 
+	# Turn movement
+	if dir.x != 0:
+		rotation.y += -dir.x * rotation_speed * delta
+
 	var max_speed: float = 7.0
 	var deceleration_force: float = 100.0
 	if on_ground():
 		# Ground movement (higher acceleration).
 		if dir != Vector3.ZERO:
 			if linear_velocity.length() < max_speed:
-				apply_central_impulse(dir.normalized() * 60.0 * delta)
+				var forward: Vector3 = -transform.basis.z.normalized()
+				apply_central_impulse(forward * 60.0 * delta)
 		else:
 			if linear_velocity.length() > 0.2:
 				var decel_dir: Vector3 = -linear_velocity.normalized()

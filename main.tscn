@@ -31,17 +31,16 @@ shadow_enabled = true
 [node name="teknostallen_only" parent="." unique_id=915765002 instance=ExtResource("1_ig7tw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, -31, -12)
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=306762864 node_paths=PackedStringArray("target")]
+[node name="CamPivot" type="Node3D" parent="." unique_id=1833100815 node_paths=PackedStringArray("target")]
+script = ExtResource("2_1bvp3")
+target = NodePath("../RigidDynamicBody3D")
+
+[node name="Camera3D" type="Camera3D" parent="CamPivot" unique_id=306762864]
 transform = Transform3D(1, 0, 0, 0, 0.7533568, 0.65761197, 0, -0.65761197, 0.7533568, -0.22515774, 7.2029333, 4.688805)
 fov = 80.0
-script = ExtResource("2_1bvp3")
-target = NodePath("../RigidDynamicBody3D/Node3D")
 
 [node name="RigidDynamicBody3D" parent="." unique_id=1921766831 instance=ExtResource("2_0xm2m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.4799048, 0)
 
 [node name="pingvin" parent="RigidDynamicBody3D" unique_id=1178599002 instance=ExtResource("3_h2yge")]
 transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -0.15042901, -0.83170795, 0.0024947822)
-
-[node name="Node3D" type="Node3D" parent="RigidDynamicBody3D" unique_id=1132397919]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1737063, 1.7942686, 1.9239883)

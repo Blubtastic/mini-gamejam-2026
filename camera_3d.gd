@@ -1,4 +1,4 @@
-extends Camera3D
+extends Node3D
 
 @export var target: Node3D  # Assign your player node in the inspector
 @export var height: float = 3.0  # Fixed camera height
