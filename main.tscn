@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://0o0d2gt3mul" path="res://rigidbody_character_3d/player/cubio.tscn" id="2_0xm2m"]
 [ext_resource type="Script" uid="uid://bqer3n2deoy80" path="res://camera_3d.gd" id="2_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://0h5d7w40ymms" path="res://assets/pingvin.blend" id="3_h2yge"]
+[ext_resource type="Script" uid="uid://dsw8lyceo0xw7" path="res://rigidbody_character_3d/player/wasd_movement.gd" id="4_lquwl"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig7tw"]
 
@@ -41,6 +42,12 @@ fov = 80.0
 
 [node name="RigidDynamicBody3D" parent="." unique_id=1921766831 instance=ExtResource("2_0xm2m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.4799048, 0)
+script = ExtResource("4_lquwl")
+acceleration_force = 10.0
+max_speed = 3.0
+linear_damp_value = 6.0
 
-[node name="pingvin" parent="RigidDynamicBody3D" unique_id=1178599002 instance=ExtResource("3_h2yge")]
-transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -0.15042901, -0.83170795, 0.0024947822)
+[node name="Pingvin" type="Node3D" parent="RigidDynamicBody3D" unique_id=1190347168]
+
+[node name="pingvin" parent="RigidDynamicBody3D/Pingvin" unique_id=1178599002 instance=ExtResource("3_h2yge")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -0.15042901, -0.83170784, 0.0024947822)
