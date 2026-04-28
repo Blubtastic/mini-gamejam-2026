@@ -1,7 +1,6 @@
 extends RigidBody3D
 
 @onready var shape_cast: ShapeCast3D = $ShapeCast3D
-@onready var camera: Camera3D = $Target/Camera3D
 @onready var start_position := position
 
 func _physics_process(delta: float) -> void:
@@ -19,12 +18,6 @@ func _physics_process(delta: float) -> void:
 	var dir := Vector3()
 	dir.x = Input.get_axis(&"move_left", &"move_right")
 	dir.z = Input.get_axis(&"move_forward", &"move_back")
-
-	# Get the camera's transform basis, but remove the X rotation such
-	# that the Y axis is up and Z is horizontal.
-	var cam_basis := camera.global_transform.basis
-	cam_basis = cam_basis.rotated(cam_basis.x, -cam_basis.get_euler().x)
-	dir = cam_basis * dir
 
 	# Air movement.
 	apply_central_impulse(dir.normalized() * 5.0 * delta)

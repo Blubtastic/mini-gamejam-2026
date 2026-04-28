@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://0o0d2gt3mul"]
 
 [ext_resource type="Script" uid="uid://c0osftkh60cpw" path="res://rigidbody_character_3d/player/cubio.gd" id="1"]
-[ext_resource type="Script" uid="uid://31a1g3rw1p0d" path="res://rigidbody_character_3d/player/follow_camera.gd" id="3"]
 [ext_resource type="Material" uid="uid://70g5qly1c5su" path="res://rigidbody_character_3d/models/white_cube_material.tres" id="4"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5bo75"]
@@ -35,16 +34,6 @@ surface_material_override/0 = ExtResource("4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1954976699]
 shape = SubResource("5")
-
-[node name="Target" type="Node3D" parent="." unique_id=1011511506]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
-
-[node name="Camera3D" type="Camera3D" parent="Target" unique_id=397996626]
-transform = Transform3D(0.34202, -0.321394, 0.883022, 0, 0.939693, 0.34202, -0.939693, -0.116978, 0.321394, 2, 0.5, 0.913381)
-fov = 74.0
-near = 0.1
-far = 50.0
-script = ExtResource("3")
 
 [node name="WinText" type="CenterContainer" parent="." unique_id=1569979456]
 visible = false

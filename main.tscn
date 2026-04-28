@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bh671ucog6dlf" path="res://assets/teknostallen_only.blend" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://0o0d2gt3mul" path="res://rigidbody_character_3d/player/cubio.tscn" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://bqer3n2deoy80" path="res://camera_3d.gd" id="2_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://0h5d7w40ymms" path="res://assets/pingvin.blend" id="3_h2yge"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig7tw"]
@@ -30,10 +31,17 @@ shadow_enabled = true
 [node name="teknostallen_only" parent="." unique_id=915765002 instance=ExtResource("1_ig7tw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, -31, -12)
 
-[node name="RigidDynamicBody3D" parent="." unique_id=1921766831 instance=ExtResource("2_0xm2m")]
+[node name="Camera3D" type="Camera3D" parent="." unique_id=306762864 node_paths=PackedStringArray("target")]
+transform = Transform3D(1, 0, 0, 0, 0.7533568, 0.65761197, 0, -0.65761197, 0.7533568, -0.22515774, 7.2029333, 4.688805)
+fov = 80.0
+script = ExtResource("2_1bvp3")
+target = NodePath("../RigidDynamicBody3D/Node3D")
 
-[node name="Camera3D" type="Camera3D" parent="RigidDynamicBody3D" unique_id=306762864]
-transform = Transform3D(-0.47507137, -0.3368122, 0.81293595, 0, 0.9238461, 0.3827641, -0.8799473, 0.18184024, -0.43889287, 3.263977, 5.8157787, -1.7621762)
+[node name="RigidDynamicBody3D" parent="." unique_id=1921766831 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.4799048, 0)
 
 [node name="pingvin" parent="RigidDynamicBody3D" unique_id=1178599002 instance=ExtResource("3_h2yge")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15042901, -0.83170795, 0.0024947822)
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -0.15042901, -0.83170795, 0.0024947822)
+
+[node name="Node3D" type="Node3D" parent="RigidDynamicBody3D" unique_id=1132397919]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1737063, 1.7942686, 1.9239883)
