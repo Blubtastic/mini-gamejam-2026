@@ -30,10 +30,10 @@ shadow_enabled = true
 [node name="teknostallen_only" parent="." unique_id=915765002 instance=ExtResource("1_ig7tw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, -31, -12)
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=306762864]
-transform = Transform3D(-0.47507137, -0.3368122, 0.81293595, 0, 0.9238461, 0.3827641, -0.8799473, 0.18184024, -0.43889284, 3.263977, 3.8157787, -1.7621762)
-
 [node name="RigidDynamicBody3D" parent="." unique_id=1921766831 instance=ExtResource("2_0xm2m")]
+
+[node name="Camera3D" type="Camera3D" parent="RigidDynamicBody3D" unique_id=306762864]
+transform = Transform3D(-0.47507137, -0.3368122, 0.81293595, 0, 0.9238461, 0.3827641, -0.8799473, 0.18184024, -0.43889287, 3.263977, 5.8157787, -1.7621762)
 
 [node name="pingvin" parent="RigidDynamicBody3D" unique_id=1178599002 instance=ExtResource("3_h2yge")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15042901, -0.83170795, 0.0024947822)

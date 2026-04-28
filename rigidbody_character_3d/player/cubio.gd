@@ -29,9 +29,20 @@ func _physics_process(delta: float) -> void:
 	# Air movement.
 	apply_central_impulse(dir.normalized() * 5.0 * delta)
 
+	var max_speed: float = 7.0
+	var deceleration_force: float = 100.0
 	if on_ground():
 		# Ground movement (higher acceleration).
-		apply_central_impulse(dir.normalized() * 10.0 * delta)
+		if dir != Vector3.ZERO:
+			if linear_velocity.length() < max_speed:
+				apply_central_impulse(dir.normalized() * 60.0 * delta)
+		else:
+			if linear_velocity.length() > 0.2:
+				var decel_dir: Vector3 = -linear_velocity.normalized()
+				apply_central_force(decel_dir * deceleration_force)
+			else:
+				linear_velocity = Vector3.ZERO
+
 
 		# Jumping code.
 		# It's acceptable to set `linear_velocity` here as it's only set once, rather than continuously.
