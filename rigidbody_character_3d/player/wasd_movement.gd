@@ -21,8 +21,3 @@ func _physics_process(delta: float) -> void:
 	# Clamp max speed
 	if linear_velocity.length() > max_speed:
 		linear_velocity = linear_velocity.normalized() * max_speed
-
-	# Rotate player by direction of movement instead of input
-	#var horizontal_movement := Vector3(linear_velocity.x, 0, linear_velocity.z)
-	#if horizontal_movement.length() > 0.1:
-		#pingvin.look_at(pingvin.global_position + horizontal_movement.normalized())
