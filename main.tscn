@@ -19,35 +19,36 @@ glow_enabled = true
 
 [node name="Main" type="Node3D" unique_id=486481499]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=140463058]
+[node name="Env" type="WorldEnvironment" parent="." unique_id=140463058]
 environment = SubResource("Environment_h2yge")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1811788517]
+[node name="Light" type="DirectionalLight3D" parent="." unique_id=1811788517]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 light_color = Color(1, 0.99607843, 0.80784315, 1)
 light_energy = 0.1
 light_bake_mode = 0
 shadow_enabled = true
 
-[node name="teknostallen_only" parent="." unique_id=915765002 instance=ExtResource("1_ig7tw")]
+[node name="KontoretModell" parent="." unique_id=1286473475 instance=ExtResource("1_ig7tw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, -31, -12)
 
-[node name="CamPivot" type="Node3D" parent="." unique_id=1833100815 node_paths=PackedStringArray("target")]
-script = ExtResource("2_1bvp3")
-target = NodePath("../RigidDynamicBody3D")
-
-[node name="Camera3D" type="Camera3D" parent="CamPivot" unique_id=306762864]
-transform = Transform3D(1, 0, 0, 0, 0.7533568, 0.65761197, 0, -0.65761197, 0.7533568, -0.22515774, 7.2029333, 4.688805)
-fov = 80.0
-
-[node name="RigidDynamicBody3D" parent="." unique_id=1921766831 instance=ExtResource("2_0xm2m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.4799048, 0)
+[node name="Player" parent="." unique_id=1921766831 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(-0.63607824, 0, 0.77162445, 0, 1, 0, -0.77162445, 0, -0.63607824, 0, -1.4799048, 0)
 script = ExtResource("4_lquwl")
-acceleration_force = 10.0
-max_speed = 3.0
+acceleration_force = 1000.0
+max_speed = 9.0
 linear_damp_value = 6.0
 
-[node name="Pingvin" type="Node3D" parent="RigidDynamicBody3D" unique_id=1190347168]
+[node name="Pingvin" type="Node3D" parent="Player" unique_id=1190347168]
 
-[node name="pingvin" parent="RigidDynamicBody3D/Pingvin" unique_id=1178599002 instance=ExtResource("3_h2yge")]
+[node name="PingvinModel" parent="Player/Pingvin" unique_id=1178599002 instance=ExtResource("3_h2yge")]
 transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -0.15042901, -0.83170784, 0.0024947822)
+
+[node name="CameraPivot" type="Node3D" parent="Player" unique_id=1833100815 node_paths=PackedStringArray("target")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4799048, 0)
+script = ExtResource("2_1bvp3")
+target = NodePath("..")
+
+[node name="Camera3D" type="Camera3D" parent="Player/CameraPivot" unique_id=306762864]
+transform = Transform3D(1, 0, 0, 0, 0.5003476, 0.86582464, 0, -0.86582464, 0.5003476, -0.22515771, 12.049338, 7.908303)
+fov = 80.0
