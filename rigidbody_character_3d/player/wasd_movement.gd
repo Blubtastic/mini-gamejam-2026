@@ -7,18 +7,24 @@ var lerped_direction := Vector3.ZERO
 @export var max_speed := 9.0
 @export var linear_damp_value := 6.0
 
+var movement_enabled := false
+
 func _ready() -> void:
 	linear_damp = linear_damp_value  # Helps slow down when no input
 
 
 func _physics_process(delta: float) -> void:
 	# Apply force in input direction
-	var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_back")
-	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction != Vector3.ZERO:
-		apply_central_force(direction * acceleration_force)
-		lerped_direction = lerped_direction.lerp(direction, 30*delta)
-		pingvin.look_at(pingvin.global_position + lerped_direction)
-	# Clamp max speed
-	if linear_velocity.length() > max_speed:
-		linear_velocity = linear_velocity.normalized() * max_speed
+	if movement_enabled:
+		var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_back")
+		var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+		if direction != Vector3.ZERO:
+			apply_central_force(direction * acceleration_force)
+			lerped_direction = lerped_direction.lerp(direction, 30*delta)
+			pingvin.look_at(pingvin.global_position + lerped_direction)
+		# Clamp max speed
+		if linear_velocity.length() > max_speed:
+			linear_velocity = linear_velocity.normalized() * max_speed
+
+func enable_movement(enable: bool) -> void:
+	movement_enabled = enable

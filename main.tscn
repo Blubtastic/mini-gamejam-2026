@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://dsw8lyceo0xw7" path="res://rigidbody_character_3d/player/wasd_movement.gd" id="4_lquwl"]
 [ext_resource type="PackedScene" uid="uid://ddh0i5oe3odgb" path="res://components/start_or_end.tscn" id="6_7mycd"]
 [ext_resource type="Texture2D" uid="uid://b785hsqr5eesp" path="res://assets/art.png" id="8_5vw27"]
+[ext_resource type="PackedScene" uid="uid://daaptygweo1vh" path="res://ui/ui_start.tscn" id="9_kek77"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig7tw"]
 
@@ -32,18 +33,7 @@ size = Vector2(3.5, 2)
 script = ExtResource("1_272bh")
 end = NodePath("StartOrEnd")
 
-[node name="Env" type="WorldEnvironment" parent="." unique_id=140463058]
-environment = SubResource("Environment_h2yge")
-
-[node name="Light" type="DirectionalLight3D" parent="." unique_id=1811788517]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
-light_color = Color(1, 0.99607843, 0.80784315, 1)
-light_energy = 0.1
-light_bake_mode = 0
-shadow_enabled = true
-
-[node name="KontoretModell" parent="." unique_id=1376999555 instance=ExtResource("1_ig7tw")]
-transform = Transform3D(-0.6266039, 0, -0.7793379, 0, 1, 0, 0.7793379, 0, -0.6266039, -31.911339, -30.982958, 59.360985)
+[node name="ui_start" parent="." unique_id=383015619 instance=ExtResource("9_kek77")]
 
 [node name="Player" parent="." unique_id=1921766831 instance=ExtResource("2_0xm2m")]
 transform = Transform3D(0.9999998, 0, 0, 0, 1, 0, 0, 0, 0.9999998, 0, -1.4799048, 0)
@@ -69,6 +59,19 @@ fov = 90.0
 [node name="StartOrEnd" parent="." unique_id=1431834418 instance=ExtResource("6_7mycd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.043628693, -3.4731598)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2066261512]
+[node name="Env" type="WorldEnvironment" parent="." unique_id=140463058]
+environment = SubResource("Environment_h2yge")
+
+[node name="Light" type="DirectionalLight3D" parent="." unique_id=1811788517]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_color = Color(1, 0.99607843, 0.80784315, 1)
+light_energy = 0.1
+light_bake_mode = 0
+shadow_enabled = true
+
+[node name="KontoretModell" parent="." unique_id=1376999555 instance=ExtResource("1_ig7tw")]
+transform = Transform3D(-0.6266039, 0, -0.7793379, 0, 1, 0, 0.7793379, 0, -0.6266039, -31.911339, -30.982958, 59.360985)
+
+[node name="Art" type="MeshInstance3D" parent="." unique_id=2066261512]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 15.573424, 1.1973183, -14.266375)
 mesh = SubResource("QuadMesh_4c57u")

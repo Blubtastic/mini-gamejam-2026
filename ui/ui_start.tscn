@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://daaptygweo1vh"]
+
+[ext_resource type="Script" uid="uid://cfxoh8qpropw5" path="res://ui/ui_start.gd" id="1_gaujj"]
+
+[node name="ui_start" type="Control" unique_id=383015619]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gaujj")
+
+[node name="Title" type="Label" parent="." unique_id=1267600998]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -358.5
+offset_top = 151.0
+offset_right = 358.5
+offset_bottom = 239.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 64
+text = "Untitled Penguin Game"
+horizontal_alignment = 1
+
+[node name="StartButton" type="Button" parent="." unique_id=341408169]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = 21.0
+offset_right = 250.0
+offset_bottom = 121.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Start"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
