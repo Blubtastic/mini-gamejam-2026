@@ -1,4 +1,5 @@
 extends RigidBody3D
+class_name Player
 
 var lerped_direction := Vector3.ZERO
 @onready var pingvin := $Pingvin
