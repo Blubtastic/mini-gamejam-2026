@@ -29,8 +29,8 @@ light_energy = 0.1
 light_bake_mode = 0
 shadow_enabled = true
 
-[node name="KontoretModell" parent="." unique_id=1047150760 instance=ExtResource("1_ig7tw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, -31, -12)
+[node name="KontoretModell" parent="." unique_id=105406337 instance=ExtResource("1_ig7tw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.99104, -30.982958, -11.987206)
 
 [node name="Player" parent="." unique_id=1921766831 instance=ExtResource("2_0xm2m")]
 transform = Transform3D(-0.6080827, 0, 0.79387355, 0, 1, 0, -0.79387355, 0, -0.6080827, 0, -1.4799048, 0)
