@@ -67,7 +67,7 @@ transform = Transform3D(1.0000001, 0, 0, 0, 0.3953372, 0.91853607, 0, -0.9185362
 fov = 90.0
 
 [node name="StartOrEnd" parent="." unique_id=1431834418 instance=ExtResource("6_7mycd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.043628693, -6.1184697)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.043628693, -3.4731598)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2066261512]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 15.573424, 1.1973183, -14.266375)
