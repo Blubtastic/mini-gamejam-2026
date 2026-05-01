@@ -29,11 +29,11 @@ light_energy = 0.1
 light_bake_mode = 0
 shadow_enabled = true
 
-[node name="KontoretModell" parent="." unique_id=1286473475 instance=ExtResource("1_ig7tw")]
+[node name="KontoretModell" parent="." unique_id=1047150760 instance=ExtResource("1_ig7tw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, -31, -12)
 
 [node name="Player" parent="." unique_id=1921766831 instance=ExtResource("2_0xm2m")]
-transform = Transform3D(-0.63607824, 0, 0.77162445, 0, 1, 0, -0.77162445, 0, -0.63607824, 0, -1.4799048, 0)
+transform = Transform3D(-0.6080827, 0, 0.79387355, 0, 1, 0, -0.79387355, 0, -0.6080827, 0, -1.4799048, 0)
 script = ExtResource("4_lquwl")
 acceleration_force = 1000.0
 max_speed = 9.0
@@ -45,10 +45,10 @@ linear_damp_value = 6.0
 transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -0.15042901, -0.83170784, 0.0024947822)
 
 [node name="CameraPivot" type="Node3D" parent="Player" unique_id=1833100815 node_paths=PackedStringArray("target")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4799048, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 script = ExtResource("2_1bvp3")
 target = NodePath("..")
 
 [node name="Camera3D" type="Camera3D" parent="Player/CameraPivot" unique_id=306762864]
-transform = Transform3D(1, 0, 0, 0, 0.5003476, 0.86582464, 0, -0.86582464, 0.5003476, -0.22515771, 12.049338, 7.908303)
-fov = 80.0
+transform = Transform3D(1.0000001, 0, 0, 0, 0.3953372, 0.91853607, 0, -0.9185362, 0.39533725, 0, 9.340488, 4.779622)
+fov = 90.0
