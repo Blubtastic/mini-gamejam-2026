@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://0h5d7w40ymms" path="res://assets/pingvin.blend" id="3_h2yge"]
 [ext_resource type="Script" uid="uid://dsw8lyceo0xw7" path="res://rigidbody_character_3d/player/wasd_movement.gd" id="4_lquwl"]
 [ext_resource type="PackedScene" uid="uid://ddh0i5oe3odgb" path="res://components/start_or_end.tscn" id="6_7mycd"]
+[ext_resource type="Texture2D" uid="uid://b785hsqr5eesp" path="res://assets/art.png" id="8_5vw27"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig7tw"]
 
@@ -19,6 +20,13 @@ background_energy_multiplier = 1.2
 sky = SubResource("Sky_0xm2m")
 glow_enabled = true
 adjustment_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kek77"]
+albedo_texture = ExtResource("8_5vw27")
+
+[sub_resource type="QuadMesh" id="QuadMesh_4c57u"]
+material = SubResource("StandardMaterial3D_kek77")
+size = Vector2(3.5, 2)
 
 [node name="Main" type="Node3D" unique_id=486481499 node_paths=PackedStringArray("end")]
 script = ExtResource("1_272bh")
@@ -60,3 +68,7 @@ fov = 90.0
 
 [node name="StartOrEnd" parent="." unique_id=1431834418 instance=ExtResource("6_7mycd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.043628693, -6.1184697)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2066261512]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 15.573424, 1.1973183, -14.266375)
+mesh = SubResource("QuadMesh_4c57u")
