@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://n408x8i2cl2s"]
 
+[ext_resource type="Script" uid="uid://cfoqi0q5awdb0" path="res://main.gd" id="1_272bh"]
 [ext_resource type="PackedScene" uid="uid://bh671ucog6dlf" path="res://assets/teknostallen_only.blend" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://0o0d2gt3mul" path="res://rigidbody_character_3d/player/cubio.tscn" id="2_0xm2m"]
 [ext_resource type="Script" uid="uid://bqer3n2deoy80" path="res://camera_3d.gd" id="2_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://0h5d7w40ymms" path="res://assets/pingvin.blend" id="3_h2yge"]
 [ext_resource type="Script" uid="uid://dsw8lyceo0xw7" path="res://rigidbody_character_3d/player/wasd_movement.gd" id="4_lquwl"]
+[ext_resource type="PackedScene" uid="uid://ddh0i5oe3odgb" path="res://components/start_or_end.tscn" id="6_7mycd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig7tw"]
 
@@ -16,8 +18,11 @@ background_mode = 2
 background_energy_multiplier = 1.2
 sky = SubResource("Sky_0xm2m")
 glow_enabled = true
+adjustment_enabled = true
 
-[node name="Main" type="Node3D" unique_id=486481499]
+[node name="Main" type="Node3D" unique_id=486481499 node_paths=PackedStringArray("end")]
+script = ExtResource("1_272bh")
+end = NodePath("StartOrEnd")
 
 [node name="Env" type="WorldEnvironment" parent="." unique_id=140463058]
 environment = SubResource("Environment_h2yge")
@@ -52,3 +57,5 @@ target = NodePath("..")
 [node name="Camera3D" type="Camera3D" parent="Player/CameraPivot" unique_id=306762864]
 transform = Transform3D(1.0000001, 0, 0, 0, 0.3953372, 0.91853607, 0, -0.9185362, 0.39533725, 0, 9.340488, 4.779622)
 fov = 90.0
+
+[node name="StartOrEnd" parent="." unique_id=1431834418 instance=ExtResource("6_7mycd")]
