@@ -34,3 +34,5 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0
 node_a = NodePath("../Hinge")
 node_b = NodePath("../PushableDoor")
 angular_limit/enable = true
+angular_limit/upper = 2.0943952
+angular_limit/lower = -2.0943952
