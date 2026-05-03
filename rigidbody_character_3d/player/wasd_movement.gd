@@ -25,5 +25,11 @@ func _physics_process(delta: float) -> void:
 		if linear_velocity.length() > max_speed:
 			linear_velocity = linear_velocity.normalized() * max_speed
 
+
 func enable_movement(enable: bool) -> void:
 	movement_enabled = enable
+
+
+func _on_hit_area_body_entered(body: Node3D) -> void:
+	if body.name == "PushableDoor":
+		body.apply_force(-pingvin.basis.z * 200.0)

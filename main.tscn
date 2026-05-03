@@ -44,7 +44,7 @@ end = NodePath("StartOrEnd")
 [node name="ui_start" parent="." unique_id=383015619 instance=ExtResource("9_kek77")]
 
 [node name="StartOrEnd" parent="." unique_id=1431834418 instance=ExtResource("6_7mycd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.043628693, -24.165955)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.469007, 0.043628693, -39.38382)
 
 [node name="Env" type="WorldEnvironment" parent="." unique_id=140463058]
 environment = SubResource("Environment_h2yge")
@@ -64,16 +64,39 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 15.5
 mesh = SubResource("QuadMesh_4c57u")
 
 [node name="Door" parent="." unique_id=591335478 instance=ExtResource("10_4c57u")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.022911072, 0.47813106, -4.986868)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.9453053, 0.16603738, -19.711151)
 
 [node name="Player" parent="." unique_id=55766663 instance=ExtResource("7_272bh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.858485, 0)
 
-[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=1115938137]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.077604294, 0, -7.9523478)
+[node name="Node3D" type="Node3D" parent="." unique_id=796671206]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5753508, 1.9385929, -30.185371)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D" unique_id=1434331369]
+[node name="MovableBox" type="RigidBody3D" parent="Node3D" unique_id=1115938137]
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/MovableBox" unique_id=1434331369]
 mesh = SubResource("BoxMesh_272bh")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=329488243]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/MovableBox" unique_id=329488243]
+shape = SubResource("BoxShape3D_5vw27")
+
+[node name="MovableBox2" type="RigidBody3D" parent="Node3D" unique_id=1185588873]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2846575, 0, 2.346157)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/MovableBox2" unique_id=516105239]
+mesh = SubResource("BoxMesh_272bh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/MovableBox2" unique_id=363215428]
+shape = SubResource("BoxShape3D_5vw27")
+
+[node name="MovableBox3" type="RigidBody3D" parent="Node3D" unique_id=594139240]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.90082645, 2.345168, 0.71647644)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/MovableBox3" unique_id=769394581]
+mesh = SubResource("BoxMesh_272bh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/MovableBox3" unique_id=356554186]
 shape = SubResource("BoxShape3D_5vw27")
