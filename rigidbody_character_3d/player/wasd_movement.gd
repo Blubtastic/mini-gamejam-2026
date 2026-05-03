@@ -6,7 +6,8 @@ var lerped_direction := Vector3.ZERO
 var acceleration_force := 10000.0
 var max_speed := 6.0
 var linear_damp_value := 6.0
-var movement_enabled := false
+@export var movement_enabled := true
+
 
 func _ready() -> void:
 	linear_damp = linear_damp_value  # Helps slow down when no input

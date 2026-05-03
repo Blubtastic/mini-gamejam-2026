@@ -12,13 +12,13 @@
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig7tw"]
 
-[sub_resource type="Sky" id="Sky_0xm2m"]
+[sub_resource type="Sky" id="Sky_kek77"]
 sky_material = SubResource("ProceduralSkyMaterial_ig7tw")
 
 [sub_resource type="Environment" id="Environment_h2yge"]
 background_mode = 2
 background_energy_multiplier = 1.2
-sky = SubResource("Sky_0xm2m")
+sky = SubResource("Sky_kek77")
 glow_enabled = true
 adjustment_enabled = true
 
@@ -65,6 +65,7 @@ thing_to_open = NodePath("../Door")
 
 [node name="Player" parent="." unique_id=55766663 instance=ExtResource("7_272bh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.32882503, 0)
+movement_enabled = false
 
 [node name="MovableShapes" parent="." unique_id=550628619 instance=ExtResource("8_kek77")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.106616, 0, -29.272358)
