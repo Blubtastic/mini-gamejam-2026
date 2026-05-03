@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://h75wyvqf4uou"]
+
+[ext_resource type="Script" uid="uid://cbuey58lhq6qe" path="res://components/button.gd" id="1_k6wox"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_bb4ew"]
+radius = 1.6
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1fbqy"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_k6wox"]
+material = SubResource("StandardMaterial3D_1fbqy")
+top_radius = 1.6
+bottom_radius = 1.6
+height = 1.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k6wox"]
+albedo_color = Color(0.038397167, 0.038397167, 0.03839716, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bb4ew"]
+material = SubResource("StandardMaterial3D_k6wox")
+size = Vector3(4, 0.4, 4)
+
+[node name="PressableButton" type="Area3D" unique_id=530898148]
+script = ExtResource("1_k6wox")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1917989895]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.20094147, 0)
+shape = SubResource("CylinderShape3D_bb4ew")
+
+[node name="Button" type="MeshInstance3D" parent="." unique_id=1686945937]
+mesh = SubResource("CylinderMesh_k6wox")
+
+[node name="Base" type="MeshInstance3D" parent="." unique_id=1649940568]
+mesh = SubResource("BoxMesh_bb4ew")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
