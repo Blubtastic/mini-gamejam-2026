@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ddh0i5oe3odgb" path="res://components/start_or_end.tscn" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://ddlocdnd8r157" path="res://player.tscn" id="7_272bh"]
 [ext_resource type="Texture2D" uid="uid://b785hsqr5eesp" path="res://assets/art.png" id="8_5vw27"]
+[ext_resource type="PackedScene" uid="uid://2fo1o5g6lmym" path="res://components/movable_shapes.tscn" id="8_kek77"]
 [ext_resource type="PackedScene" uid="uid://daaptygweo1vh" path="res://ui/ui_start.tscn" id="9_kek77"]
 [ext_resource type="PackedScene" uid="uid://c1117h5bmy35l" path="res://components/door_with_hinge.tscn" id="10_4c57u"]
 
@@ -26,16 +27,6 @@ albedo_texture = ExtResource("8_5vw27")
 [sub_resource type="QuadMesh" id="QuadMesh_4c57u"]
 material = SubResource("StandardMaterial3D_kek77")
 size = Vector2(3.5, 2)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_272bh"]
-albedo_color = Color(1, 0, 0, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_272bh"]
-material = SubResource("StandardMaterial3D_272bh")
-size = Vector3(2, 2, 2)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_5vw27"]
-size = Vector3(2, 2, 2)
 
 [node name="Main" type="Node3D" unique_id=486481499 node_paths=PackedStringArray("end")]
 script = ExtResource("1_272bh")
@@ -69,34 +60,5 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.94
 [node name="Player" parent="." unique_id=55766663 instance=ExtResource("7_272bh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.858485, 0)
 
-[node name="Node3D" type="Node3D" parent="." unique_id=796671206]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5753508, 1.9385929, -30.185371)
-
-[node name="MovableBox" type="RigidBody3D" parent="Node3D" unique_id=1115938137]
-metadata/_edit_group_ = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/MovableBox" unique_id=1434331369]
-mesh = SubResource("BoxMesh_272bh")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/MovableBox" unique_id=329488243]
-shape = SubResource("BoxShape3D_5vw27")
-
-[node name="MovableBox2" type="RigidBody3D" parent="Node3D" unique_id=1185588873]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2846575, 0, 2.346157)
-metadata/_edit_group_ = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/MovableBox2" unique_id=516105239]
-mesh = SubResource("BoxMesh_272bh")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/MovableBox2" unique_id=363215428]
-shape = SubResource("BoxShape3D_5vw27")
-
-[node name="MovableBox3" type="RigidBody3D" parent="Node3D" unique_id=594139240]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.90082645, 2.345168, 0.71647644)
-metadata/_edit_group_ = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/MovableBox3" unique_id=769394581]
-mesh = SubResource("BoxMesh_272bh")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/MovableBox3" unique_id=356554186]
-shape = SubResource("BoxShape3D_5vw27")
+[node name="MovableShapes" parent="." unique_id=550628619 instance=ExtResource("8_kek77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.106616, 0, -29.272358)
