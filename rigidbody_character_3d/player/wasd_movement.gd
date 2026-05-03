@@ -1,12 +1,11 @@
 extends RigidBody3D
 class_name Player
 
+@onready var pingvin: Node3D = $Pingvin
 var lerped_direction := Vector3.ZERO
-@onready var pingvin := $Pingvin
-@export var acceleration_force := 1000.0
-@export var max_speed := 9.0
-@export var linear_damp_value := 6.0
-
+var acceleration_force := 10000.0
+var max_speed := 6.0
+var linear_damp_value := 6.0
 var movement_enabled := false
 
 func _ready() -> void:

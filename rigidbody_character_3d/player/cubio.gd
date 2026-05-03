@@ -1,3 +1,4 @@
+class_name Player
 extends RigidBody3D
 
 @onready var shape_cast: ShapeCast3D = $ShapeCast3D

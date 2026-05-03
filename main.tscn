@@ -2,13 +2,11 @@
 
 [ext_resource type="Script" uid="uid://cfoqi0q5awdb0" path="res://main.gd" id="1_272bh"]
 [ext_resource type="PackedScene" uid="uid://bh671ucog6dlf" path="res://assets/teknostallen_only.blend" id="1_ig7tw"]
-[ext_resource type="PackedScene" uid="uid://0o0d2gt3mul" path="res://rigidbody_character_3d/player/cubio.tscn" id="2_0xm2m"]
-[ext_resource type="Script" uid="uid://bqer3n2deoy80" path="res://camera_3d.gd" id="2_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://0h5d7w40ymms" path="res://assets/pingvin.blend" id="3_h2yge"]
-[ext_resource type="Script" uid="uid://dsw8lyceo0xw7" path="res://rigidbody_character_3d/player/wasd_movement.gd" id="4_lquwl"]
 [ext_resource type="PackedScene" uid="uid://ddh0i5oe3odgb" path="res://components/start_or_end.tscn" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://ddlocdnd8r157" path="res://player.tscn" id="7_272bh"]
 [ext_resource type="Texture2D" uid="uid://b785hsqr5eesp" path="res://assets/art.png" id="8_5vw27"]
 [ext_resource type="PackedScene" uid="uid://daaptygweo1vh" path="res://ui/ui_start.tscn" id="9_kek77"]
+[ext_resource type="PackedScene" uid="uid://c1117h5bmy35l" path="res://components/door_with_hinge.tscn" id="10_4c57u"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig7tw"]
 
@@ -29,35 +27,24 @@ albedo_texture = ExtResource("8_5vw27")
 material = SubResource("StandardMaterial3D_kek77")
 size = Vector2(3.5, 2)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_272bh"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_272bh"]
+material = SubResource("StandardMaterial3D_272bh")
+size = Vector3(2, 2, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5vw27"]
+size = Vector3(2, 2, 2)
+
 [node name="Main" type="Node3D" unique_id=486481499 node_paths=PackedStringArray("end")]
 script = ExtResource("1_272bh")
 end = NodePath("StartOrEnd")
 
 [node name="ui_start" parent="." unique_id=383015619 instance=ExtResource("9_kek77")]
 
-[node name="Player" parent="." unique_id=1921766831 instance=ExtResource("2_0xm2m")]
-transform = Transform3D(0.9999998, 0, 0, 0, 1, 0, 0, 0, 0.9999998, 0, -1.4799048, 0)
-script = ExtResource("4_lquwl")
-acceleration_force = 1000.0
-max_speed = 9.0
-linear_damp_value = 6.0
-
-[node name="Pingvin" type="Node3D" parent="Player" unique_id=1190347168]
-
-[node name="PingvinModel" parent="Player/Pingvin" unique_id=316623533 instance=ExtResource("3_h2yge")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, -0.84134877, 0)
-
-[node name="CameraPivot" type="Node3D" parent="Player" unique_id=1833100815 node_paths=PackedStringArray("target")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
-script = ExtResource("2_1bvp3")
-target = NodePath("..")
-
-[node name="Camera3D" type="Camera3D" parent="Player/CameraPivot" unique_id=306762864]
-transform = Transform3D(1.0000001, 0, 0, 0, 0.3953372, 0.91853607, 0, -0.9185362, 0.39533725, 0, 9.340488, 4.779622)
-fov = 90.0
-
 [node name="StartOrEnd" parent="." unique_id=1431834418 instance=ExtResource("6_7mycd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.043628693, -3.4731598)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.043628693, -24.165955)
 
 [node name="Env" type="WorldEnvironment" parent="." unique_id=140463058]
 environment = SubResource("Environment_h2yge")
@@ -75,3 +62,18 @@ transform = Transform3D(-0.6266039, 0, -0.7793379, 0, 1, 0, 0.7793379, 0, -0.626
 [node name="Art" type="MeshInstance3D" parent="." unique_id=2066261512]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 15.573424, 1.1973183, -14.266375)
 mesh = SubResource("QuadMesh_4c57u")
+
+[node name="Door" parent="." unique_id=591335478 instance=ExtResource("10_4c57u")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.022911072, 0.47813106, -4.986868)
+
+[node name="Player" parent="." unique_id=55766663 instance=ExtResource("7_272bh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.858485, 0)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=1115938137]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.077604294, 0, -7.9523478)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D" unique_id=1434331369]
+mesh = SubResource("BoxMesh_272bh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=329488243]
+shape = SubResource("BoxShape3D_5vw27")
