@@ -57,12 +57,14 @@ mesh = SubResource("QuadMesh_4c57u")
 
 [node name="Door" parent="." unique_id=591335478 instance=ExtResource("10_4c57u")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.9453053, 0.16603738, -19.711151)
+is_frozen = true
+
+[node name="PressableButton" parent="." unique_id=530898148 node_paths=PackedStringArray("thing_to_open") instance=ExtResource("9_4c57u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.130199, -2.2695599, -16.858515)
+thing_to_open = NodePath("../Door")
 
 [node name="Player" parent="." unique_id=55766663 instance=ExtResource("7_272bh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.32882503, 0)
 
 [node name="MovableShapes" parent="." unique_id=550628619 instance=ExtResource("8_kek77")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.106616, 0, -29.272358)
-
-[node name="PressableButton" parent="." unique_id=530898148 instance=ExtResource("9_4c57u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6415315, -2.2695599, -6.8779893)

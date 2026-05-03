@@ -1,9 +1,11 @@
 extends Area3D
 
-@onready var button: MeshInstance3D = $Button
+@onready var button_mesh: MeshInstance3D = $Button
 var pressed_position := Vector3(0, -0.5, 0)
-
+@export var thing_to_open: Node3D
 
 func _on_body_entered(body: Node3D) -> void:
 	if body is Player:
-		button.position = pressed_position
+		button_mesh.position = pressed_position
+		if thing_to_open.has_method("open"):
+			thing_to_open.open()
