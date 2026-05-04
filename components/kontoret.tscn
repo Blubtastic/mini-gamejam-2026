@@ -18,7 +18,7 @@ adjustment_enabled = true
 
 [node name="Kontoret" type="Node3D" unique_id=1864751491]
 
-[node name="teknostallen_only" parent="." unique_id=1782343727 instance=ExtResource("1_f7s6v")]
+[node name="teknostallen_only" parent="." unique_id=1904971 instance=ExtResource("1_f7s6v")]
 transform = Transform3D(-0.6266039, 0, -0.7793379, 0, 1, 0, 0.7793379, 0, -0.6266039, -31.911339, -30.982958, 59.360985)
 
 [node name="Env" type="WorldEnvironment" parent="." unique_id=2064115845]
@@ -31,50 +31,50 @@ light_energy = 0.1
 light_bake_mode = 0
 shadow_enabled = true
 
-[node name="table" parent="." unique_id=1836195671 instance=ExtResource("2_biwhf")]
+[node name="table" parent="." unique_id=2008206320 instance=ExtResource("2_biwhf")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.6423748, -1.6253026, 3.8570323)
 
-[node name="table2" parent="." unique_id=1105217930 instance=ExtResource("2_biwhf")]
+[node name="table2" parent="." unique_id=695459852 instance=ExtResource("2_biwhf")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -7.036195, -1.6253026, 3.8570323)
 
-[node name="table3" parent="." unique_id=779469900 instance=ExtResource("2_biwhf")]
+[node name="table3" parent="." unique_id=301761090 instance=ExtResource("2_biwhf")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -5.4669137, -1.6253026, -2.0914824)
 
-[node name="table4" parent="." unique_id=1490111548 instance=ExtResource("2_biwhf")]
+[node name="table4" parent="." unique_id=1055111306 instance=ExtResource("2_biwhf")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -5.4669137, -1.6253026, -6.0426464)
 
-[node name="table5" parent="." unique_id=934141039 instance=ExtResource("2_biwhf")]
+[node name="table5" parent="." unique_id=845181947 instance=ExtResource("2_biwhf")]
 transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -4.0593805, -2.1552591, -14.162508)
 
-[node name="table6" parent="." unique_id=930111396 instance=ExtResource("2_biwhf")]
+[node name="table6" parent="." unique_id=1360598391 instance=ExtResource("2_biwhf")]
 transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 11.795877, -2.15526, -14.804169)
 
-[node name="table7" parent="." unique_id=546661106 instance=ExtResource("2_biwhf")]
+[node name="table7" parent="." unique_id=1865403643 instance=ExtResource("2_biwhf")]
 transform = Transform3D(-2.1855695e-07, 0, -1, 0, 1, 0, 1, 0, -2.1855695e-07, 7.5683537, -2.15526, -11.268422)
 
-[node name="table8" parent="." unique_id=208437010 instance=ExtResource("2_biwhf")]
+[node name="table8" parent="." unique_id=1001756307 instance=ExtResource("2_biwhf")]
 transform = Transform3D(-2.1855695e-07, 0, -1, 0, 1, 0, 1, 0, -2.1855695e-07, 6.4783196, -2.15526, -3.136817)
 
-[node name="table9" parent="." unique_id=26096948 instance=ExtResource("2_biwhf")]
+[node name="table9" parent="." unique_id=92052146 instance=ExtResource("2_biwhf")]
 transform = Transform3D(-2.1855695e-07, 0, -1, 0, 1, 0, 1, 0, -2.1855695e-07, 9.478319, -2.15526, -3.136817)
 
-[node name="table12" parent="." unique_id=1284493418 instance=ExtResource("2_biwhf")]
+[node name="table12" parent="." unique_id=770051085 instance=ExtResource("2_biwhf")]
 transform = Transform3D(-2.1855695e-07, 0, -1, 0, 1, 0, 1, 0, -2.1855695e-07, 7.535167, -0.6407528, 7.548442)
 
-[node name="table13" parent="." unique_id=1493741728 instance=ExtResource("2_biwhf")]
+[node name="table13" parent="." unique_id=1754376775 instance=ExtResource("2_biwhf")]
 transform = Transform3D(-2.1855695e-07, 0, -1, 0, 1, 0, 1, 0, -2.1855695e-07, 10.535167, -0.6407528, 7.548442)
 
-[node name="table10" parent="." unique_id=809175497 instance=ExtResource("2_biwhf")]
+[node name="table10" parent="." unique_id=142888207 instance=ExtResource("2_biwhf")]
 transform = Transform3D(-2.1855695e-07, 0, -1, 0, 1, 0, 1, 0, -2.1855695e-07, 6.5943713, -2.15526, 1.5120268)
 
-[node name="table11" parent="." unique_id=1195868500 instance=ExtResource("2_biwhf")]
+[node name="table11" parent="." unique_id=1911454249 instance=ExtResource("2_biwhf")]
 transform = Transform3D(-2.1855695e-07, 0, -1, 0, 1, 0, 1, 0, -2.1855695e-07, 9.594371, -2.15526, 1.5120268)
 
-[node name="sofa" parent="." unique_id=1868896123 instance=ExtResource("3_5lww7")]
+[node name="sofa" parent="." unique_id=620219118 instance=ExtResource("3_5lww7")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -6.628011, -2.311102, -12.272066)
 
-[node name="sofa2" parent="." unique_id=777595299 instance=ExtResource("3_5lww7")]
+[node name="sofa2" parent="." unique_id=772236736 instance=ExtResource("3_5lww7")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.5269284, -2.311102, -9.402859)
 
-[node name="sofa3" parent="." unique_id=795367459 instance=ExtResource("3_5lww7")]
+[node name="sofa3" parent="." unique_id=368993923 instance=ExtResource("3_5lww7")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13.241306, -2.311102, -17.013191)

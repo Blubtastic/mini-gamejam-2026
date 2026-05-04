@@ -37,7 +37,25 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:Sofa_001": {
+"generate/physics": true,
+"physics/body_type": 1,
+"physics/shape_type": 1
+},
+"PATH:Sofa_002": {
+"generate/physics": true,
+"physics/body_type": 1,
+"physics/shape_type": 1
+},
+"PATH:Sofa_003": {
+"generate/physics": true,
+"physics/body_type": 1,
+"physics/shape_type": 1
+}
+}
+}
 blender/nodes/visible=0
 blender/nodes/active_collection_only=false
 blender/nodes/punctual_lights=true
