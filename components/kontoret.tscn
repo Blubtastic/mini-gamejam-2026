@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dkqt8njibu6lw"]
 
-[ext_resource type="PackedScene" uid="uid://bh671ucog6dlf" path="res://assets/teknostallen_only.blend" id="1_f7s6v"]
+[ext_resource type="PackedScene" uid="uid://bg3408vpjafbv" path="res://assets/teknostallen_only2.blend" id="1_5lww7"]
 [ext_resource type="PackedScene" uid="uid://dsjr10d3odelr" path="res://assets/table.blend" id="2_biwhf"]
 [ext_resource type="PackedScene" uid="uid://d0xfjfm50mv4n" path="res://assets/sofa.blend" id="3_5lww7"]
 
@@ -18,7 +18,7 @@ adjustment_enabled = true
 
 [node name="Kontoret" type="Node3D" unique_id=1864751491]
 
-[node name="teknostallen_only" parent="." unique_id=1904971 instance=ExtResource("1_f7s6v")]
+[node name="teknostallen_only2" parent="." unique_id=979171672 instance=ExtResource("1_5lww7")]
 transform = Transform3D(-0.6266039, 0, -0.7793379, 0, 1, 0, 0.7793379, 0, -0.6266039, -31.911339, -30.982958, 59.360985)
 
 [node name="Env" type="WorldEnvironment" parent="." unique_id=2064115845]

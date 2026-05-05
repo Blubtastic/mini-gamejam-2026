@@ -7,10 +7,10 @@
 size = Vector3(8, 8, 8)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p4em4"]
-size = Vector3(0.2, 5, 0.2)
+size = Vector3(0.1, 4.5, 0.1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vrkb7"]
-size = Vector3(0.05, 4.6354003, 2.5295289)
+size = Vector3(0.05, 4.3610597, 2.168637)
 
 [node name="Door" type="Node3D" unique_id=591335478]
 script = ExtResource("1_vrkb7")
@@ -33,7 +33,7 @@ mass = 0.1
 linear_damp = 2.5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PushableDoor" unique_id=1052418680]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.014755249, -4.863739e-05, -0.0064635277)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.014755249, -0.009557724, 0.003148079)
 shape = SubResource("BoxShape3D_vrkb7")
 
 [node name="door_model" parent="PushableDoor" unique_id=1750655630 instance=ExtResource("1_p4em4")]

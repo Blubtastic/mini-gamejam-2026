@@ -25,6 +25,7 @@ end = NodePath("StartOrEnd")
 [node name="KontoretModels" type="Node3D" parent="." unique_id=1583286276]
 
 [node name="Kontoret" parent="KontoretModels" unique_id=1864751491 instance=ExtResource("2_kek77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06772184, 0.08198929, 0.05854249)
 
 [node name="Art" type="MeshInstance3D" parent="KontoretModels" unique_id=2066261512]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 15.573424, 1.1973183, -14.266375)
@@ -38,7 +39,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.469007, 0.043628693, -39.3
 [node name="Door" parent="." unique_id=591335478 instance=ExtResource("10_4c57u")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.9453053, 0.16603738, -19.711151)
 is_frozen = true
-open_by_card_id = 1
+
+[node name="Door2" parent="." unique_id=2139888984 instance=ExtResource("10_4c57u")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 15.937087, 0.15269357, -7.887454)
+is_frozen = true
+open_by_card_id = 4
+
+[node name="Door3" parent="." unique_id=716159812 instance=ExtResource("10_4c57u")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 15.937087, 0.16603738, 9.949315)
+is_frozen = true
+open_by_card_id = 4
 
 [node name="PressableButton" parent="." unique_id=530898148 node_paths=PackedStringArray("thing_to_open") instance=ExtResource("9_4c57u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.130199, -2.2695599, -16.858515)
