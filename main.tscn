@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://daaptygweo1vh" path="res://ui/ui_start.tscn" id="9_kek77"]
 [ext_resource type="PackedScene" uid="uid://c1117h5bmy35l" path="res://components/door_with_hinge.tscn" id="10_4c57u"]
 [ext_resource type="PackedScene" uid="uid://dts33bxl35x2x" path="res://components/card.tscn" id="10_efxa6"]
+[ext_resource type="PackedScene" uid="uid://cstpdsuwgfvvg" path="res://components/fuel.tscn" id="11_efxa6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kek77"]
 albedo_texture = ExtResource("8_5vw27")
@@ -43,7 +44,7 @@ is_frozen = true
 [node name="Door2" parent="." unique_id=2139888984 instance=ExtResource("10_4c57u")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 15.937087, 0.15269357, -7.887454)
 is_frozen = true
-open_by_card_id = 4
+open_by_card_id = 1
 
 [node name="Door3" parent="." unique_id=716159812 instance=ExtResource("10_4c57u")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 15.937087, 0.16603738, 9.949315)
@@ -62,8 +63,11 @@ movement_enabled = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.106616, 0, -29.272358)
 
 [node name="Card" parent="." unique_id=247370434 instance=ExtResource("10_efxa6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.2732575, -4.277719)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.230453, -2.2732556, -11.671108)
 
 [node name="Card2" parent="." unique_id=551140298 instance=ExtResource("10_efxa6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.313666, -2.2732575, -5.5645146)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8329544, -2.2732575, 11.675411)
 card_id = 4
+
+[node name="Fuel" parent="." unique_id=62347248 instance=ExtResource("11_efxa6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.402096, -2.214045, -3.3972876)

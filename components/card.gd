@@ -1,8 +1,8 @@
 extends Node3D
 
+@export var card_id := 1
 @onready var card: Node3D = $card
 var rotation_speed := 1.5
-@export var card_id := 1
 
 func _process(delta: float) -> void:
 	# Rotate around the Y axis
