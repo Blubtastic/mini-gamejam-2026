@@ -7,7 +7,7 @@ var acceleration_force := 10000.0
 var max_speed := 6.0
 var linear_damp_value := 6.0
 @export var movement_enabled := true
-
+var held_cards := []
 
 func _ready() -> void:
 	linear_damp = linear_damp_value  # Helps slow down when no input
@@ -34,3 +34,8 @@ func enable_movement(enable: bool) -> void:
 func _on_hit_area_body_entered(body: Node3D) -> void:
 	if body.name == "PushableDoor":
 		body.apply_force(-pingvin.basis.z * 200.0)
+
+
+func add_held_card(card_id: int) -> void:
+	if card_id not in held_cards:
+		held_cards.append(card_id)

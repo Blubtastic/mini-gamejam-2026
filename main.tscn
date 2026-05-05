@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://h75wyvqf4uou" path="res://components/button.tscn" id="9_4c57u"]
 [ext_resource type="PackedScene" uid="uid://daaptygweo1vh" path="res://ui/ui_start.tscn" id="9_kek77"]
 [ext_resource type="PackedScene" uid="uid://c1117h5bmy35l" path="res://components/door_with_hinge.tscn" id="10_4c57u"]
+[ext_resource type="PackedScene" uid="uid://dts33bxl35x2x" path="res://components/card.tscn" id="10_efxa6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kek77"]
 albedo_texture = ExtResource("8_5vw27")
@@ -37,6 +38,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.469007, 0.043628693, -39.3
 [node name="Door" parent="." unique_id=591335478 instance=ExtResource("10_4c57u")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.9453053, 0.16603738, -19.711151)
 is_frozen = true
+open_by_card_id = 1
 
 [node name="PressableButton" parent="." unique_id=530898148 node_paths=PackedStringArray("thing_to_open") instance=ExtResource("9_4c57u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.130199, -2.2695599, -16.858515)
@@ -48,3 +50,10 @@ movement_enabled = false
 
 [node name="MovableShapes" parent="." unique_id=550628619 instance=ExtResource("8_kek77")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.106616, 0, -29.272358)
+
+[node name="Card" parent="." unique_id=247370434 instance=ExtResource("10_efxa6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.2732575, -4.277719)
+
+[node name="Card2" parent="." unique_id=551140298 instance=ExtResource("10_efxa6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.313666, -2.2732575, -5.5645146)
+card_id = 4

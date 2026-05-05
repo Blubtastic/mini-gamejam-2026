@@ -3,6 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://cnyeadnsdbiof" path="res://assets/door.blend" id="1_p4em4"]
 [ext_resource type="Script" uid="uid://djd1maka67cdb" path="res://components/door_with_hinge.gd" id="1_vrkb7"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_08cvd"]
+size = Vector3(8, 8, 8)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_p4em4"]
 size = Vector3(0.2, 5, 0.2)
 
@@ -11,6 +14,12 @@ size = Vector3(0.05, 4.6354003, 2.5295289)
 
 [node name="Door" type="Node3D" unique_id=591335478]
 script = ExtResource("1_vrkb7")
+
+[node name="DetectPlayer" type="Area3D" parent="." unique_id=1800259430]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DetectPlayer" unique_id=467641597]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.046875, 0, 0)
+shape = SubResource("BoxShape3D_08cvd")
 
 [node name="Hinge" type="StaticBody3D" parent="." unique_id=1097240518]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.4)
@@ -36,3 +45,5 @@ node_b = NodePath("../PushableDoor")
 angular_limit/enable = true
 angular_limit/upper = 2.0943952
 angular_limit/lower = -2.0943952
+
+[connection signal="body_entered" from="DetectPlayer" to="." method="_on_detect_player_body_entered"]
