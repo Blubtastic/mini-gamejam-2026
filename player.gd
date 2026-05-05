@@ -6,7 +6,7 @@ class_name Player
 @onready var pingvin: Node3D = $Pingvin
 @onready var jetpack: Node3D = $Pingvin/jetpack
 var lerped_direction := Vector3.ZERO
-var acceleration_force := 100000.0
+var acceleration_force := 200000.0
 var max_speed := 10.0
 @export var movement_enabled := true
 var held_cards := []
@@ -22,7 +22,7 @@ func _physics_process(delta: float) -> void:
 		var xy_linear_velocity := Vector3(linear_velocity.x, 0, linear_velocity.z)
 		if direction != Vector3.ZERO and xy_linear_velocity.length() < max_speed:
 			apply_central_force(direction * acceleration_force*delta)
-			lerped_direction = lerped_direction.lerp(direction, 30*delta)
+			lerped_direction = lerped_direction.lerp(direction, 50*delta)
 			pingvin.look_at(pingvin.global_position + lerped_direction)
 		else:
 			if xy_linear_velocity.length() > 0.01:
@@ -39,6 +39,9 @@ func _physics_process(delta: float) -> void:
 			thruster_1.stop_particles()
 			thruster_2.stop_particles()
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("reset_position"):
+		get_tree().reload_current_scene()
 
 func enable_movement(enable: bool) -> void:
 	movement_enabled = enable
