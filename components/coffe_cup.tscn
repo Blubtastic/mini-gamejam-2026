@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://bfihtm5vs2hij"]
+
+[ext_resource type="PackedScene" uid="uid://ug0mlhbmme2u" path="res://assets/kaffekopp.blend" id="1_2apfj"]
+[ext_resource type="Script" uid="uid://c1juu5yp76mtd" path="res://components/coffe_cup.gd" id="1_55v23"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4pniv"]
+transparency = 1
+albedo_color = Color(1, 1, 0, 0.12156863)
+emission_enabled = true
+emission = Color(1, 1, 0, 1)
+emission_energy_multiplier = 2.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_55v23"]
+material = SubResource("StandardMaterial3D_4pniv")
+top_radius = 2.0
+bottom_radius = 2.0
+height = 0.1
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_55v23"]
+height = 4.0
+radius = 2.0
+
+[node name="CoffeCup" type="Area3D" unique_id=583371201]
+script = ExtResource("1_55v23")
+
+[node name="kaffekopp" parent="." unique_id=1692850992 instance=ExtResource("1_2apfj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3161969, 0)
+
+[node name="GlowingCyllinder" type="MeshInstance3D" parent="." unique_id=808174680]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02892375, 0)
+mesh = SubResource("CylinderMesh_55v23")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=221566815]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3887718, 0)
+shape = SubResource("CylinderShape3D_55v23")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dts33bxl35x2x" path="res://components/card.tscn" id="10_efxa6"]
 [ext_resource type="PackedScene" uid="uid://cstpdsuwgfvvg" path="res://components/fuel.tscn" id="11_efxa6"]
 [ext_resource type="PackedScene" uid="uid://c8i04bjdxof7y" path="res://components/simple_wall.tscn" id="12_dg77c"]
+[ext_resource type="PackedScene" uid="uid://bfihtm5vs2hij" path="res://components/coffe_cup.tscn" id="13_ycdy4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kek77"]
 albedo_texture = ExtResource("8_5vw27")
@@ -39,7 +40,7 @@ mesh = SubResource("QuadMesh_4c57u")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.469007, 0.043628693, -39.38382)
 
 [node name="Player" parent="." unique_id=55766663 instance=ExtResource("7_272bh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.32882503, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.329, 0)
 movement_enabled = false
 
 [node name="Obstacles" type="Node3D" parent="." unique_id=61001956]
@@ -75,11 +76,20 @@ card_id = 4
 [node name="Fuel" parent="Obstacles" unique_id=62347248 instance=ExtResource("11_efxa6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.402096, -2.214045, -3.3972876)
 
-[node name="Fuel2" parent="Obstacles" unique_id=777207514 instance=ExtResource("11_efxa6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.042383, -2.2140431, -43.185123)
-
 [node name="Fuel3" parent="Obstacles" unique_id=1692296007 instance=ExtResource("11_efxa6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.406153, -2.2140431, -14.080732)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.380219, -2.2140393, 12.127024)
 
-[node name="SimpleWall" parent="." unique_id=357139603 instance=ExtResource("12_dg77c")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 26.008333, -2, -57.581135)
+[node name="SimpleWall" parent="Obstacles" unique_id=357139603 instance=ExtResource("12_dg77c")]
+transform = Transform3D(-4.3711392e-08, -3.4530831e-15, -1, -0.18846129, 0.98208064, 8.237908e-09, 0.98208064, 0.18846129, -4.2928125e-08, 26.008333, -6.207734, -56.772335)
+
+[node name="SimpleWall2" parent="Obstacles" unique_id=738612029 instance=ExtResource("12_dg77c")]
+transform = Transform3D(-4.3711392e-08, 1.7746854e-15, -1, 0.17548701, 0.98448175, -7.67078e-09, 0.98448175, -0.17548701, -4.303306e-08, 25.646015, -6.3511066, -77.10289)
+
+[node name="SimpleWall3" parent="Obstacles" unique_id=219790254 instance=ExtResource("12_dg77c")]
+transform = Transform3D(1.3113413e-07, 0, 0.9999999, 0, 0.9999999, 0, -0.9999999, 0, 1.3113414e-07, 25.855032, -4.1970544, 21.017372)
+
+[node name="CoffeCup" parent="Obstacles" unique_id=583371201 instance=ExtResource("13_ycdy4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5686607, -2.1974845, -7.2342424)
+
+[node name="CoffeCup2" parent="Obstacles" unique_id=1789549616 instance=ExtResource("13_ycdy4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.611416, -2.1974845, -47.99397)
