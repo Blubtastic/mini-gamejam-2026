@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ddlocdnd8r157"]
 
-[ext_resource type="Script" uid="uid://dsw8lyceo0xw7" path="res://rigidbody_character_3d/player/wasd_movement.gd" id="1_i3pqv"]
+[ext_resource type="Script" uid="uid://dsw8lyceo0xw7" path="res://player.gd" id="1_i3pqv"]
 [ext_resource type="PackedScene" uid="uid://0h5d7w40ymms" path="res://assets/pingvin.blend" id="1_onrkg"]
 [ext_resource type="Script" uid="uid://bqer3n2deoy80" path="res://camera_3d.gd" id="2_i3pqv"]
 [ext_resource type="PackedScene" uid="uid://delssmflnjea" path="res://assets/jetpack.blend" id="4_hqtel"]
@@ -18,7 +18,7 @@ axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
 mass = 10.0
-gravity_scale = 5.0
+gravity_scale = 2.0
 script = ExtResource("1_i3pqv")
 
 [node name="HitArea" type="Area3D" parent="." unique_id=451699278]

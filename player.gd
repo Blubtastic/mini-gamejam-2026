@@ -4,7 +4,7 @@ class_name Player
 @onready var pingvin: Node3D = $Pingvin
 @onready var jetpack: Node3D = $Pingvin/jetpack
 var lerped_direction := Vector3.ZERO
-var acceleration_force := 1000.0
+var acceleration_force := 100000.0
 var max_speed := 6.0
 var linear_damp_value := 6.0
 @export var movement_enabled := true
@@ -24,7 +24,7 @@ func _physics_process(delta: float) -> void:
 		var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_back")
 		var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 		if direction != Vector3.ZERO:
-			apply_central_force(direction * acceleration_force)
+			apply_central_force(direction * acceleration_force*delta)
 			lerped_direction = lerped_direction.lerp(direction, 30*delta)
 			pingvin.look_at(pingvin.global_position + lerped_direction)
 
@@ -32,7 +32,7 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_pressed(&"jump") and fuel > 0.0:
 			var new_fuel := fuel - 5*delta
 			fuel = new_fuel if new_fuel > 0.0 else 0.0
-			apply_central_force(Vector3(0,1,0) * 500)
+			apply_central_force(Vector3(0,1,0) * 35000*delta)
 
 		# TODO: Find a better way to solve this.
 		# Clamp max speed (BAD SOLUTION!!)
