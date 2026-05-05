@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://0h5d7w40ymms" path="res://assets/pingvin.blend" id="1_onrkg"]
 [ext_resource type="Script" uid="uid://bqer3n2deoy80" path="res://camera_3d.gd" id="2_i3pqv"]
 [ext_resource type="PackedScene" uid="uid://delssmflnjea" path="res://assets/jetpack.blend" id="4_hqtel"]
+[ext_resource type="PackedScene" uid="uid://4iymcxkdrrjt" path="res://assets/trail_vfx.tscn" id="4_sweqy"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_i3pqv"]
 radius = 1.2
@@ -37,6 +38,15 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, -
 
 [node name="jetpack" parent="Pingvin" unique_id=245276913 instance=ExtResource("4_hqtel")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0.8309226, 0.8914157)
+
+[node name="Particles" type="Node3D" parent="Pingvin" unique_id=1508430443]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0.8309226, 0.8914157)
+
+[node name="Thruster1" parent="Pingvin/Particles" unique_id=2029761306 instance=ExtResource("4_sweqy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6631869, -1.4680686, 0.39008185)
+
+[node name="Thruster2" parent="Pingvin/Particles" unique_id=789616503 instance=ExtResource("4_sweqy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6631869, -1.4680686, -0.4018213)
 
 [node name="CameraPivot" type="Node3D" parent="." unique_id=1157624354]
 script = ExtResource("2_i3pqv")

@@ -1,20 +1,16 @@
 extends RigidBody3D
 class_name Player
 
+@onready var thruster_1: Node3D = $Pingvin/Particles/Thruster1
+@onready var thruster_2: Node3D = $Pingvin/Particles/Thruster2
 @onready var pingvin: Node3D = $Pingvin
 @onready var jetpack: Node3D = $Pingvin/jetpack
 var lerped_direction := Vector3.ZERO
 var acceleration_force := 100000.0
-var max_speed := 6.0
-var linear_damp_value := 6.0
+var max_speed := 10.0
 @export var movement_enabled := true
 var held_cards := []
 var fuel := 0.0
-
-# TODO: enable code below and see if it affects gravity
-#func _ready() -> void:
-	#linear_damp = linear_damp_value  # Helps slow down when no input
-
 
 func _physics_process(delta: float) -> void:
 	jetpack.visible = true if fuel > 0 else false
@@ -23,21 +19,25 @@ func _physics_process(delta: float) -> void:
 	if movement_enabled:
 		var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_back")
 		var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-		if direction != Vector3.ZERO:
+		var xy_linear_velocity := Vector3(linear_velocity.x, 0, linear_velocity.z)
+		if direction != Vector3.ZERO and xy_linear_velocity.length() < max_speed:
 			apply_central_force(direction * acceleration_force*delta)
 			lerped_direction = lerped_direction.lerp(direction, 30*delta)
 			pingvin.look_at(pingvin.global_position + lerped_direction)
-
+		else:
+			if xy_linear_velocity.length() > 0.01:
+				var drag_force := -xy_linear_velocity.normalized() * acceleration_force / 10
+				apply_central_force(drag_force*3*delta)
 		# Jetpack force
 		if Input.is_action_pressed(&"jump") and fuel > 0.0:
 			var new_fuel := fuel - 5*delta
 			fuel = new_fuel if new_fuel > 0.0 else 0.0
-			apply_central_force(Vector3(0,1,0) * 35000*delta)
-
-		# TODO: Find a better way to solve this.
-		# Clamp max speed (BAD SOLUTION!!)
-		#if linear_velocity.length() > max_speed:
-			#linear_velocity = linear_velocity.normalized() * max_speed
+			apply_central_force(Vector3(0,1,0) * 40000*delta)
+			thruster_1.start_particles()
+			thruster_2.start_particles()
+		else:
+			thruster_1.stop_particles()
+			thruster_2.stop_particles()
 
 
 func enable_movement(enable: bool) -> void:

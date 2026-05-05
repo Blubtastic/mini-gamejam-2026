@@ -71,3 +71,9 @@ card_id = 4
 
 [node name="Fuel" parent="." unique_id=62347248 instance=ExtResource("11_efxa6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.402096, -2.214045, -3.3972876)
+
+[node name="Fuel2" parent="." unique_id=777207514 instance=ExtResource("11_efxa6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.018511, -2.2140431, -25.17142)
+
+[node name="Fuel3" parent="." unique_id=1692296007 instance=ExtResource("11_efxa6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.406153, -2.2140431, -14.080732)
