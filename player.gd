@@ -1,5 +1,6 @@
 extends RigidBody3D
-class_name Player
+
+class_name Playable
 
 @onready var camera_3d: Camera3D = $CameraPivot/Camera3D
 @onready var thruster_1: Node3D = $Pingvin/Particles/Thruster1

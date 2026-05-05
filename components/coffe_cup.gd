@@ -9,6 +9,6 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node3D) -> void:
-	if body is Player:
+	if body is Playable:
 		body.drink_coffee()
 		queue_free()

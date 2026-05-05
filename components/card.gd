@@ -10,7 +10,7 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node3D) -> void:
-	if body is Player:
+	if body is Playable:
 		queue_free()
 		if body.has_method("add_held_card"):
 			body.add_held_card(card_id)

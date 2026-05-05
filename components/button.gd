@@ -8,7 +8,7 @@ var pressed_position := Vector3(0, -0.5, 0)
 
 
 func _on_body_entered(body: Node3D) -> void:
-	if body is Player:
+	if body is Playable:
 		button_mesh.position = pressed_position
 		if thing_to_open.has_method("open"):
 			thing_to_open.open()

@@ -18,6 +18,6 @@ func open() -> void:
 
 # Open door if player is close and has correct card
 func _on_detect_player_body_entered(body: Node3D) -> void:
-	if body is Player:
+	if body is Playable:
 		if open_by_card_id in body.held_cards:
 			pushable_door.freeze = false

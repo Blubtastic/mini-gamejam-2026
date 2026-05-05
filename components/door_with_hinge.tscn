@@ -10,7 +10,7 @@ size = Vector3(8, 8, 8)
 size = Vector3(0.1, 4.5, 0.1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vrkb7"]
-size = Vector3(0.05, 4.3610597, 2.168637)
+size = Vector3(0.7, 4.361, 2.169)
 
 [node name="Door" type="Node3D" unique_id=591335478]
 script = ExtResource("1_vrkb7")

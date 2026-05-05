@@ -2,7 +2,7 @@ extends Node3D
 
 
 const UI_END = preload("uid://0c1myc43nfbv")
-@onready var player: Player = $Player
+@onready var player: Playable = $Player
 @onready var ui_start: Control = $ui_start
 @export var end: Area3D
 var has_ended := false
@@ -14,7 +14,7 @@ func _ready() -> void:
 
 
 func on_end_entered(body: Node3D) -> void:
-	if body is RigidBody3D and body is Player and !has_ended:
+	if body is RigidBody3D and body is Playable and !has_ended:
 		has_ended = true
 		player.enable_movement(false)
 		var instance := UI_END.instantiate()
