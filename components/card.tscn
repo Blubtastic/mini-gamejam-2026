@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dts33bxl35x2x"]
 
 [ext_resource type="PackedScene" uid="uid://cbp1o3vho6tsa" path="res://assets/card.blend" id="1_4pniv"]
-[ext_resource type="Script" uid="uid://dx01ojnh48odi" path="res://components/card.gd" id="2_i0r0c"]
+[ext_resource type="Script" uid="uid://dx01ojnh48odi" path="res://components/scripts/card.gd" id="2_i0r0c"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_4pniv"]
 height = 3.7266846

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://h75wyvqf4uou"]
 
-[ext_resource type="Script" uid="uid://cbuey58lhq6qe" path="res://components/button.gd" id="1_k6wox"]
+[ext_resource type="Script" uid="uid://cbuey58lhq6qe" path="res://components/scripts/button.gd" id="1_k6wox"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_bb4ew"]
 radius = 1.6

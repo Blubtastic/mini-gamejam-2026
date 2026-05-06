@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cstpdsuwgfvvg"]
 
 [ext_resource type="PackedScene" uid="uid://cat5vx2kk7e6f" path="res://assets/fuel.blend" id="1_4xi3v"]
-[ext_resource type="Script" uid="uid://dnsripntq5dxa" path="res://components/fuel.gd" id="1_p0rmg"]
+[ext_resource type="Script" uid="uid://dnsripntq5dxa" path="res://components/scripts/fuel.gd" id="1_p0rmg"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_p0rmg"]
 height = 4.0

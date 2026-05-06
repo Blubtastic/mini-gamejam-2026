@@ -19,7 +19,7 @@ func _physics_process(delta: float) -> void:
 	var acceleration_force := 200000.0 * base_speed
 	var max_speed := 10.0 * base_speed
 	camera_3d.fov = lerp(camera_3d.fov, fov, delta*20)
-	
+
 	# Apply force in input direction
 	if movement_enabled:
 		var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_back")

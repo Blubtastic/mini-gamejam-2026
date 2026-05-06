@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c1117h5bmy35l"]
 
 [ext_resource type="PackedScene" uid="uid://cnyeadnsdbiof" path="res://assets/door.blend" id="1_p4em4"]
-[ext_resource type="Script" uid="uid://djd1maka67cdb" path="res://components/door_with_hinge.gd" id="1_vrkb7"]
+[ext_resource type="Script" uid="uid://djd1maka67cdb" path="res://components/scripts/door_with_hinge.gd" id="1_vrkb7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_08cvd"]
 size = Vector3(8, 8, 8)
