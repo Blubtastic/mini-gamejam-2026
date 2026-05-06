@@ -4,7 +4,7 @@ extends Node3D
 @onready var card: Node3D = $card
 var rotation_speed := 1.5
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	# Rotate around the Y axis
 	card.rotate_y(rotation_speed * delta)
 

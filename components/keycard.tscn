@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dts33bxl35x2x"]
 
-[ext_resource type="Script" uid="uid://dx01ojnh48odi" path="res://components/scripts/card.gd" id="1_xvje1"]
+[ext_resource type="Script" uid="uid://dx01ojnh48odi" path="res://components/scripts/keycard.gd" id="1_xvje1"]
 [ext_resource type="PackedScene" uid="uid://cbp1o3vho6tsa" path="res://assets/keycard.blend" id="2_21rro"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_4pniv"]

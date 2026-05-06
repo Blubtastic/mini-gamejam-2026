@@ -63,9 +63,9 @@ func add_held_card(card_id: int) -> void:
 func add_fuel(amount: float) -> void:
 	fuel += amount
 
-func drink_coffee() -> void:
-	base_speed = 3
+func drink_coffee(speed_mult: float = 3.0, duration: float = 1.2) -> void:
+	base_speed = speed_mult
 	camera.target_fov = 100.0
-	await get_tree().create_timer(1.2).timeout
-	base_speed = 1
+	await get_tree().create_timer(duration).timeout
+	base_speed = 1.0
 	camera.target_fov = 90.0
