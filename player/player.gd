@@ -8,16 +8,16 @@ class_name Playable
 @onready var pingvin: Node3D = $Pingvin
 @onready var jetpack: Node3D = $Pingvin/jetpack
 var lerped_direction := Vector3.ZERO
-var base_speed := 1.0
-@export var movement_enabled := true
-@export var jetpack_force := 40000.0
 var held_cards := []
 var fuel := 0.0
+var speed_multiplier := 1.0
+@export var movement_enabled := true
+@export var jetpack_force := 40000.0
 
 func _physics_process(delta: float) -> void:
 	jetpack.visible = true if fuel > 0 else false
-	var acceleration_force := 200000.0 * base_speed
-	var max_speed := 10.0 * base_speed
+	var acceleration_force := 200000.0 * speed_multiplier
+	var max_speed := 10.0 * speed_multiplier
 
 	# Apply force in input direction
 	if movement_enabled:
@@ -65,8 +65,8 @@ func add_fuel(amount: float) -> void:
 	fuel += amount
 
 func drink_coffee(speed_mult: float = 3.0, duration: float = 1.2) -> void:
-	base_speed = speed_mult
+	speed_multiplier = speed_mult
 	camera.target_fov = 100.0
 	await get_tree().create_timer(duration).timeout
-	base_speed = 1.0
+	speed_multiplier = 1.0
 	camera.target_fov = 90.0
