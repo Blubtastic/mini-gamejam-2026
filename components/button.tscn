@@ -1,26 +1,11 @@
 [gd_scene format=3 uid="uid://h75wyvqf4uou"]
 
 [ext_resource type="Script" uid="uid://cbuey58lhq6qe" path="res://components/scripts/button.gd" id="1_k6wox"]
+[ext_resource type="PackedScene" uid="uid://bqkp8w0qs57md" path="res://assets/button_top.blend" id="2_5i06l"]
+[ext_resource type="PackedScene" uid="uid://dfhls5oxucvvs" path="res://assets/button_base.blend" id="3_8hyi5"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_bb4ew"]
 radius = 1.6
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1fbqy"]
-albedo_color = Color(1, 0, 0, 1)
-roughness = 0.0
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_k6wox"]
-material = SubResource("StandardMaterial3D_1fbqy")
-top_radius = 1.6
-bottom_radius = 1.6
-height = 1.5
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k6wox"]
-albedo_color = Color(0.038397167, 0.038397167, 0.03839716, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_bb4ew"]
-material = SubResource("StandardMaterial3D_k6wox")
-size = Vector3(4, 0.4, 4)
 
 [sub_resource type="Curve" id="Curve_k6wox"]
 _data = [Vector2(0, 0), 0.0, 6.506299, 0, 0, Vector2(0.14720811, 1), 1.1570477, 1.1570477, 0, 0, Vector2(0.6345178, 1), -1.0514046, -1.0514046, 0, 0, Vector2(1, 0), -6.174454, 0.0, 0, 0]
@@ -61,12 +46,6 @@ script = ExtResource("1_k6wox")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.20094147, 0)
 shape = SubResource("CylinderShape3D_bb4ew")
 
-[node name="Button" type="MeshInstance3D" parent="." unique_id=1686945937]
-mesh = SubResource("CylinderMesh_k6wox")
-
-[node name="Base" type="MeshInstance3D" parent="." unique_id=1649940568]
-mesh = SubResource("BoxMesh_bb4ew")
-
 [node name="Poof" type="GPUParticles3D" parent="." unique_id=838940947]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.30059743, 0)
 emitting = false
@@ -77,5 +56,11 @@ explosiveness = 1.0
 transform_align = 2
 process_material = SubResource("ParticleProcessMaterial_5i06l")
 draw_pass_1 = SubResource("CylinderMesh_5i06l")
+
+[node name="Button" parent="." unique_id=1937853218 instance=ExtResource("2_5i06l")]
+transform = Transform3D(0.5130973, 0, 0, 0, 0.5130973, 0, 0, 0, 0.5130973, 0, -0.015633881, 0)
+
+[node name="Base" parent="." unique_id=50927718 instance=ExtResource("3_8hyi5")]
+transform = Transform3D(0.5017404, 0, 0, 0, 0.5017404, 0, 0, 0, 0.5017404, 0, 0, 0)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
