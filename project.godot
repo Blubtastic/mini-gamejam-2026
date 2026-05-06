@@ -17,10 +17,6 @@ config/tags=PackedStringArray("3d", "demo", "official", "physics")
 run/main_scene="uid://n408x8i2cl2s"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 
-[autoload]
-
-Globals="*uid://iq4pctvl16xa"
-
 [debug]
 
 gdscript/warnings/untyped_declaration=1
