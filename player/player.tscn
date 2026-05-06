@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://ddlocdnd8r157"]
+
+[ext_resource type="Script" uid="uid://dsw8lyceo0xw7" path="res://player/player.gd" id="1_i3pqv"]
+[ext_resource type="PackedScene" uid="uid://0h5d7w40ymms" path="res://assets/pingvin.blend" id="1_onrkg"]
+[ext_resource type="Script" uid="uid://bqer3n2deoy80" path="res://player/camera.gd" id="2_i3pqv"]
+[ext_resource type="PackedScene" uid="uid://delssmflnjea" path="res://assets/jetpack.blend" id="4_hqtel"]
+[ext_resource type="PackedScene" uid="uid://4iymcxkdrrjt" path="res://assets/trail_vfx.tscn" id="4_sweqy"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_i3pqv"]
+radius = 1.2
+height = 4.0
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hqtel"]
+radius = 0.8
+height = 4.0
+
+[node name="Player" type="RigidBody3D" unique_id=55766663]
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+mass = 10.0
+gravity_scale = 2.0
+script = ExtResource("1_i3pqv")
+
+[node name="HitArea" type="Area3D" parent="." unique_id=451699278]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HitArea" unique_id=652465937]
+shape = SubResource("CapsuleShape3D_i3pqv")
+
+[node name="Hitbox" type="CollisionShape3D" parent="." unique_id=1066273785]
+shape = SubResource("CapsuleShape3D_hqtel")
+
+[node name="Pingvin" type="Node3D" parent="." unique_id=745944962]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5035594, 0)
+
+[node name="PingvinModel" parent="Pingvin" unique_id=316623533 instance=ExtResource("1_onrkg")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, -1.4917111, 0)
+
+[node name="jetpack" parent="Pingvin" unique_id=245276913 instance=ExtResource("4_hqtel")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0.8309226, 0.8914157)
+
+[node name="Particles" type="Node3D" parent="Pingvin" unique_id=1508430443]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0.8309226, 0.8914157)
+
+[node name="Thruster1" parent="Pingvin/Particles" unique_id=2029761306 instance=ExtResource("4_sweqy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6631869, -1.4680686, 0.39008185)
+
+[node name="Thruster2" parent="Pingvin/Particles" unique_id=789616503 instance=ExtResource("4_sweqy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6631869, -1.4680686, -0.4018213)
+
+[node name="CameraPivot" type="Node3D" parent="." unique_id=1157624354]
+script = ExtResource("2_i3pqv")
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot" unique_id=1646883603]
+transform = Transform3D(1, 0, 0, 0, 0.39533713, 0.9185361, 0, -0.91853607, 0.39533716, 0, 12.831461, 6.1956577)
+fov = 90.0
+
+[connection signal="body_entered" from="HitArea" to="." method="_on_hit_area_body_entered"]
