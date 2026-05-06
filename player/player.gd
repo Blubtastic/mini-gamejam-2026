@@ -10,6 +10,7 @@ class_name Playable
 var lerped_direction := Vector3.ZERO
 var base_speed := 1.0
 @export var movement_enabled := true
+@export var jetpack_force := 40000.0
 var held_cards := []
 var fuel := 0.0
 
@@ -35,7 +36,7 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_pressed(&"jump") and fuel > 0.0:
 			var new_fuel := fuel - 5*delta
 			fuel = new_fuel if new_fuel > 0.0 else 0.0
-			apply_central_force(Vector3(0,1,0) * 40000*delta)
+			apply_central_force(Vector3(0,1,0) * jetpack_force*delta)
 			thruster_1.start_particles()
 			thruster_2.start_particles()
 		else:
