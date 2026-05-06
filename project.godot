@@ -16,7 +16,6 @@ This is similar to the 3D platformer demo."
 config/tags=PackedStringArray("3d", "demo", "official", "physics")
 run/main_scene="uid://n408x8i2cl2s"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://rigidbody_character_3d/icon.svg"
 
 [debug]
 
