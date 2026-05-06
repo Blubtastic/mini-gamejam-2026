@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bfihtm5vs2hij"]
 
-[ext_resource type="PackedScene" uid="uid://ug0mlhbmme2u" path="res://assets/kaffekopp.blend" id="1_2apfj"]
-[ext_resource type="Script" uid="uid://c1juu5yp76mtd" path="res://components/coffe_cup.gd" id="1_55v23"]
+[ext_resource type="PackedScene" uid="uid://ug0mlhbmme2u" path="res://assets/coffee_cup.blend" id="1_2apfj"]
+[ext_resource type="Script" uid="uid://c1juu5yp76mtd" path="res://components/scripts/coffe_cup.gd" id="1_55v23"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4pniv"]
 transparency = 1

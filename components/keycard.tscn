@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dts33bxl35x2x"]
+
+[ext_resource type="Script" uid="uid://dx01ojnh48odi" path="res://components/scripts/card.gd" id="1_xvje1"]
+[ext_resource type="PackedScene" uid="uid://cbp1o3vho6tsa" path="res://assets/keycard.blend" id="2_21rro"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_4pniv"]
+height = 3.7266846
+radius = 1.8955078
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4pniv"]
+transparency = 1
+albedo_color = Color(1, 1, 0, 0.12156863)
+emission_enabled = true
+emission = Color(1, 1, 0, 1)
+emission_energy_multiplier = 2.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_owxsn"]
+material = SubResource("StandardMaterial3D_4pniv")
+top_radius = 2.0
+bottom_radius = 2.0
+height = 0.1
+
+[node name="Card" type="Area3D" unique_id=551140298]
+script = ExtResource("1_xvje1")
+
+[node name="Hitbox" type="CollisionShape3D" parent="." unique_id=1245933004]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7973244, 0)
+shape = SubResource("CylinderShape3D_4pniv")
+
+[node name="card" parent="." unique_id=301169561 instance=ExtResource("2_21rro")]
+transform = Transform3D(0.958993, -0.28342956, 0, 0.28342956, 0.958993, 0, 0, 0, 1, 0, 1.760447, 0)
+
+[node name="GlowingCyllinder" type="MeshInstance3D" parent="." unique_id=1859284575]
+mesh = SubResource("CylinderMesh_owxsn")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
