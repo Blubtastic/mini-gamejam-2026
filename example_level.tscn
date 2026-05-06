@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bfihtm5vs2hij" path="res://components/coffe_cup.tscn" id="13_003ey"]
 [ext_resource type="PackedScene" uid="uid://bswbgnjnxw8q7" path="res://components/movable_shapes/capsule.tscn" id="13_m2tod"]
 [ext_resource type="PackedScene" uid="uid://ckmrtq81b2ns6" path="res://components/movable_shapes/cube.tscn" id="14_bgi5i"]
-[ext_resource type="PackedScene" uid="uid://lww3eqaw5qnr" path="res://components/movable_shapes/Cyllinder.tscn" id="15_31o6h"]
+[ext_resource type="PackedScene" uid="uid://lww3eqaw5qnr" path="res://components/movable_shapes/cyllinder.tscn" id="15_31o6h"]
 [ext_resource type="PackedScene" uid="uid://g1n3egaag41n" path="res://components/movable_shapes/sphere.tscn" id="16_eklcc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kek77"]
