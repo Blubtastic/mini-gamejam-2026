@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://g1n3egaag41n"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_nwtil"]
+radius = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4c57u"]
+albedo_color = Color(1, 0, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_akfwx"]
+material = SubResource("StandardMaterial3D_4c57u")
+radius = 1.0
+height = 2.0
+
+[node name="Sphere" type="RigidBody3D" unique_id=229499274]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=832759826]
+shape = SubResource("SphereShape3D_nwtil")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=742776434]
+mesh = SubResource("SphereMesh_akfwx")

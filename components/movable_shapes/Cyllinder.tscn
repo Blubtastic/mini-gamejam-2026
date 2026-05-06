@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://lww3eqaw5qnr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5vw27"]
+albedo_color = Color(1, 1, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_as4kc"]
+material = SubResource("StandardMaterial3D_5vw27")
+top_radius = 1.0
+bottom_radius = 1.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_dlrcu"]
+radius = 1.0
+
+[node name="Cyllinder" type="RigidBody3D" unique_id=1102640324]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1971842045]
+mesh = SubResource("CylinderMesh_as4kc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1980017267]
+shape = SubResource("CylinderShape3D_dlrcu")

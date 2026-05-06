@@ -8,11 +8,14 @@
 [ext_resource type="PackedScene" uid="uid://ddlocdnd8r157" path="res://player/player.tscn" id="6_31o6h"]
 [ext_resource type="PackedScene" uid="uid://c1117h5bmy35l" path="res://components/door_with_hinge.tscn" id="7_eklcc"]
 [ext_resource type="PackedScene" uid="uid://h75wyvqf4uou" path="res://components/button.tscn" id="8_hom6h"]
-[ext_resource type="PackedScene" uid="uid://2fo1o5g6lmym" path="res://components/movable_shapes/movable_shapes.tscn" id="9_nuto0"]
 [ext_resource type="PackedScene" uid="uid://dts33bxl35x2x" path="res://components/keycard.tscn" id="10_5763n"]
 [ext_resource type="PackedScene" uid="uid://cstpdsuwgfvvg" path="res://components/jetpack_fuel.tscn" id="11_68kf6"]
 [ext_resource type="PackedScene" uid="uid://c8i04bjdxof7y" path="res://components/wall.tscn" id="12_g40kx"]
 [ext_resource type="PackedScene" uid="uid://bfihtm5vs2hij" path="res://components/coffe_cup.tscn" id="13_003ey"]
+[ext_resource type="PackedScene" uid="uid://bswbgnjnxw8q7" path="res://components/movable_shapes/capsule.tscn" id="13_m2tod"]
+[ext_resource type="PackedScene" uid="uid://ckmrtq81b2ns6" path="res://components/movable_shapes/cube.tscn" id="14_bgi5i"]
+[ext_resource type="PackedScene" uid="uid://lww3eqaw5qnr" path="res://components/movable_shapes/Cyllinder.tscn" id="15_31o6h"]
+[ext_resource type="PackedScene" uid="uid://g1n3egaag41n" path="res://components/movable_shapes/sphere.tscn" id="16_eklcc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kek77"]
 albedo_texture = ExtResource("3_56rpi")
@@ -45,40 +48,6 @@ movement_enabled = false
 
 [node name="Obstacles" type="Node3D" parent="." unique_id=61001956]
 
-[node name="Door" parent="Obstacles" unique_id=591335478 instance=ExtResource("7_eklcc")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.9453053, 0.16603738, -19.711151)
-is_frozen = true
-
-[node name="Door2" parent="Obstacles" unique_id=2139888984 instance=ExtResource("7_eklcc")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 15.937087, 0.15269357, -7.887454)
-is_frozen = true
-open_by_card_id = 1
-
-[node name="Door3" parent="Obstacles" unique_id=716159812 instance=ExtResource("7_eklcc")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 15.937087, 0.16603738, 9.949315)
-is_frozen = true
-open_by_card_id = 4
-
-[node name="PressableButton" parent="Obstacles" unique_id=530898148 node_paths=PackedStringArray("thing_to_open") instance=ExtResource("8_hom6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.130199, -2.2695599, -16.858515)
-thing_to_open = NodePath("../Door")
-
-[node name="MovableShapes" parent="Obstacles" unique_id=550628619 instance=ExtResource("9_nuto0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.106616, 0, -29.272358)
-
-[node name="Card" parent="Obstacles" unique_id=247370434 instance=ExtResource("10_5763n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.230453, -2.2732556, -11.671108)
-
-[node name="Card2" parent="Obstacles" unique_id=551140298 instance=ExtResource("10_5763n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8329544, -2.2732575, 11.675411)
-card_id = 4
-
-[node name="Fuel" parent="Obstacles" unique_id=62347248 instance=ExtResource("11_68kf6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.402096, -2.214045, -3.3972876)
-
-[node name="Fuel3" parent="Obstacles" unique_id=1692296007 instance=ExtResource("11_68kf6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.380219, -2.2140393, 12.127024)
-
 [node name="SimpleWall" parent="Obstacles" unique_id=357139603 instance=ExtResource("12_g40kx")]
 transform = Transform3D(-4.3711392e-08, -3.4530831e-15, -1, -0.18846129, 0.98208064, 8.237908e-09, 0.98208064, 0.18846129, -4.2928125e-08, 26.008333, -6.207734, -56.772335)
 
@@ -88,8 +57,56 @@ transform = Transform3D(-4.3711392e-08, 1.7746854e-15, -1, 0.17548701, 0.9844817
 [node name="SimpleWall3" parent="Obstacles" unique_id=219790254 instance=ExtResource("12_g40kx")]
 transform = Transform3D(1.3113413e-07, 0, 0.9999999, 0, 0.9999999, 0, -0.9999999, 0, 1.3113414e-07, 25.855032, -4.1970544, 21.017372)
 
-[node name="CoffeCup" parent="Obstacles" unique_id=583371201 instance=ExtResource("13_003ey")]
+[node name="MovableShapes" type="Node3D" parent="Obstacles" unique_id=614935550]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9833193, 0, -28.432735)
+
+[node name="Capsule" parent="Obstacles/MovableShapes" unique_id=804078704 instance=ExtResource("13_m2tod")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8661926, 0.89202833, -0.20034027)
+
+[node name="Cube" parent="Obstacles/MovableShapes" unique_id=1151487171 instance=ExtResource("14_bgi5i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1484919, 0, -0.8318386)
+
+[node name="Cyllinder" parent="Obstacles/MovableShapes" unique_id=1102640324 instance=ExtResource("15_31o6h")]
+transform = Transform3D(0.41194376, 0.9112092, 0, -0.91120917, 0.4119438, 0, 0, 0, 1, 0.1275177, 0.041945457, 1.4776573)
+
+[node name="Sphere" parent="Obstacles/MovableShapes" unique_id=229499274 instance=ExtResource("16_eklcc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5544841, -0.019090652)
+
+[node name="Interactables" type="Node3D" parent="." unique_id=601931362]
+
+[node name="CoffeCup" parent="Interactables" unique_id=583371201 instance=ExtResource("13_003ey")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5686607, -2.1974845, -7.2342424)
 
-[node name="CoffeCup2" parent="Obstacles" unique_id=1789549616 instance=ExtResource("13_003ey")]
+[node name="CoffeCup2" parent="Interactables" unique_id=1789549616 instance=ExtResource("13_003ey")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.611416, -2.1974845, -47.99397)
+
+[node name="Door" parent="Interactables" unique_id=591335478 instance=ExtResource("7_eklcc")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.9453053, 0.16603738, -19.711151)
+is_frozen = true
+
+[node name="Door2" parent="Interactables" unique_id=2139888984 instance=ExtResource("7_eklcc")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 15.937087, 0.15269357, -7.887454)
+is_frozen = true
+open_by_card_id = 1
+
+[node name="Door3" parent="Interactables" unique_id=716159812 instance=ExtResource("7_eklcc")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 15.937087, 0.16603738, 9.949315)
+is_frozen = true
+open_by_card_id = 4
+
+[node name="PressableButton" parent="Interactables" unique_id=530898148 node_paths=PackedStringArray("thing_to_open") instance=ExtResource("8_hom6h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.130199, -2.2695599, -16.858515)
+thing_to_open = NodePath("../Door")
+
+[node name="Card" parent="Interactables" unique_id=247370434 instance=ExtResource("10_5763n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.230453, -2.2732556, -11.671108)
+
+[node name="Card2" parent="Interactables" unique_id=551140298 instance=ExtResource("10_5763n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8329544, -2.2732575, 11.675411)
+card_id = 4
+
+[node name="Fuel" parent="Interactables" unique_id=62347248 instance=ExtResource("11_68kf6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.402096, -2.214045, -3.3972876)
+
+[node name="Fuel3" parent="Interactables" unique_id=1692296007 instance=ExtResource("11_68kf6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.380219, -2.2140393, 12.127024)

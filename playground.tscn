@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://cbb0as4y2ymwa"]
 
 [ext_resource type="PackedScene" uid="uid://ddh0i5oe3odgb" path="res://components/goal.tscn" id="1_o00ia"]
-[ext_resource type="PackedScene" uid="uid://2fo1o5g6lmym" path="res://components/movable_shapes/movable_shapes.tscn" id="2_4bqqs"]
 [ext_resource type="PackedScene" uid="uid://c1117h5bmy35l" path="res://components/door_with_hinge.tscn" id="3_ynsuh"]
 [ext_resource type="PackedScene" uid="uid://h75wyvqf4uou" path="res://components/button.tscn" id="4_v7dth"]
 [ext_resource type="PackedScene" uid="uid://ddlocdnd8r157" path="res://player/player.tscn" id="5_pi42a"]
@@ -51,9 +50,6 @@ shape = SubResource("WorldBoundaryShape3D_o00ia")
 
 [node name="StartOrEnd" parent="." unique_id=1431834418 instance=ExtResource("1_o00ia")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8154564, 7.0726233, 10.593333)
-
-[node name="MovableShapes" parent="." unique_id=550628619 instance=ExtResource("2_4bqqs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4886527, 1.1218903, 15.932125)
 
 [node name="Door" parent="." unique_id=591335478 instance=ExtResource("3_ynsuh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05935383, 2.587679, 3.1112928)
