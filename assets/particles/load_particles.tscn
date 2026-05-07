@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dpnxxg8gkef2w"]
 
 [ext_resource type="Script" uid="uid://dh2cjbye2mn4r" path="res://assets/particles/load_particles.gd" id="1_7ji47"]
-[ext_resource type="PackedScene" uid="uid://4iymcxkdrrjt" path="res://assets/particles/boost_vfx.tscn" id="2_elqxh"]
-[ext_resource type="PackedScene" uid="uid://drtqluonje1ys" path="res://assets/particles/poof.tscn" id="3_elqxh"]
+[ext_resource type="PackedScene" uid="uid://4iymcxkdrrjt" path="res://assets/particles/boost.tscn" id="2_elqxh"]
+[ext_resource type="PackedScene" uid="uid://drtqluonje1ys" path="res://assets/particles/sparks.tscn" id="3_elqxh"]
 
 [node name="Loading" type="Node3D" unique_id=129111463]
 script = ExtResource("1_7ji47")

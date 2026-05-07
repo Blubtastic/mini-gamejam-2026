@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://daaptygweo1vh" path="res://ui/ui_start.tscn" id="2_g6k8r"]
 [ext_resource type="Script" uid="uid://bqer3n2deoy80" path="res://player/camera.gd" id="2_i3pqv"]
 [ext_resource type="PackedScene" uid="uid://delssmflnjea" path="res://assets/jetpack.blend" id="4_hqtel"]
-[ext_resource type="PackedScene" uid="uid://4iymcxkdrrjt" path="res://assets/particles/boost_vfx.tscn" id="4_sweqy"]
+[ext_resource type="PackedScene" uid="uid://4iymcxkdrrjt" path="res://assets/particles/boost.tscn" id="4_sweqy"]
 [ext_resource type="PackedScene" uid="uid://dpnxxg8gkef2w" path="res://assets/particles/load_particles.tscn" id="7_boad6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_i3pqv"]

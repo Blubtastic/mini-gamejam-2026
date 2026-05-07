@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://4iymcxkdrrjt"]
 
-[ext_resource type="Script" uid="uid://bk0lc203q2hls" path="res://assets/particles/boost_vfx.gd" id="1_061ol"]
+[ext_resource type="Script" uid="uid://bk0lc203q2hls" path="res://assets/particles/boost.gd" id="1_061ol"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q5oib"]
 diffuse_mode = 3
