@@ -23,8 +23,6 @@ mass = 10.0
 gravity_scale = 2.0
 script = ExtResource("1_i3pqv")
 
-[node name="ui_start" parent="." unique_id=383015619 instance=ExtResource("2_g6k8r")]
-
 [node name="HitArea" type="Area3D" parent="." unique_id=451699278]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HitArea" unique_id=652465937]
@@ -57,5 +55,7 @@ script = ExtResource("2_i3pqv")
 [node name="Camera3D" type="Camera3D" parent="CameraPivot" unique_id=1646883603]
 transform = Transform3D(1, 0, 0, 0, 0.39533713, 0.9185361, 0, -0.91853607, 0.39533716, 0, 12.831461, 6.1956577)
 fov = 90.0
+
+[node name="ui_start" parent="." unique_id=383015619 instance=ExtResource("2_g6k8r")]
 
 [connection signal="body_entered" from="HitArea" to="." method="_on_hit_area_body_entered"]
