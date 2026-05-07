@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://ddh0i5oe3odgb"]
 
+[ext_resource type="Script" uid="uid://dadccfjukl0vu" path="res://components/scripts/goal.gd" id="1_bga2f"]
+
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_vmbk7"]
 height = 20.0
 radius = 2.0
@@ -20,10 +22,13 @@ bottom_radius = 2.0
 height = 20.0
 radial_segments = 32
 
-[node name="StartOrEnd" type="Area3D" unique_id=1431834418]
+[node name="Goal" type="Area3D" unique_id=1431834418]
+script = ExtResource("1_bga2f")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1246897713]
 shape = SubResource("CylinderShape3D_vmbk7")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1300418790]
 mesh = SubResource("CylinderMesh_sg825")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
