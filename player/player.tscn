@@ -5,7 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://daaptygweo1vh" path="res://ui/ui_start.tscn" id="2_g6k8r"]
 [ext_resource type="Script" uid="uid://bqer3n2deoy80" path="res://player/camera.gd" id="2_i3pqv"]
 [ext_resource type="PackedScene" uid="uid://delssmflnjea" path="res://assets/jetpack.blend" id="4_hqtel"]
-[ext_resource type="PackedScene" uid="uid://4iymcxkdrrjt" path="res://assets/boost_vfx.tscn" id="4_sweqy"]
+[ext_resource type="PackedScene" uid="uid://4iymcxkdrrjt" path="res://assets/particles/boost_vfx.tscn" id="4_sweqy"]
+[ext_resource type="PackedScene" uid="uid://dpnxxg8gkef2w" path="res://assets/particles/load_particles.tscn" id="7_boad6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_i3pqv"]
 radius = 1.2
@@ -57,5 +58,8 @@ transform = Transform3D(1, 0, 0, 0, 0.39533713, 0.9185361, 0, -0.91853607, 0.395
 fov = 90.0
 
 [node name="ui_start" parent="." unique_id=383015619 instance=ExtResource("2_g6k8r")]
+
+[node name="Loading" parent="ui_start" unique_id=129111463 instance=ExtResource("7_boad6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -14.37842, 0)
 
 [connection signal="body_entered" from="HitArea" to="." method="_on_hit_area_body_entered"]

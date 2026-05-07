@@ -1,5 +1,6 @@
 extends Node3D
 
+
 @onready var smoke: CPUParticles3D = $Smoke
 @onready var fire: CPUParticles3D = $Fire
 

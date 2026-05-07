@@ -3,41 +3,10 @@
 [ext_resource type="Script" uid="uid://cbuey58lhq6qe" path="res://components/scripts/button.gd" id="1_k6wox"]
 [ext_resource type="PackedScene" uid="uid://bqkp8w0qs57md" path="res://assets/button_top.blend" id="2_5i06l"]
 [ext_resource type="PackedScene" uid="uid://dfhls5oxucvvs" path="res://assets/button_base.blend" id="3_8hyi5"]
+[ext_resource type="PackedScene" uid="uid://drtqluonje1ys" path="res://assets/particles/poof.tscn" id="3_lloda"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_bb4ew"]
 radius = 1.6
-
-[sub_resource type="Curve" id="Curve_k6wox"]
-_data = [Vector2(0, 0), 0.0, 6.506299, 0, 0, Vector2(0.14720811, 1), 1.1570477, 1.1570477, 0, 0, Vector2(0.6345178, 1), -1.0514046, -1.0514046, 0, 0, Vector2(1, 0), -6.174454, 0.0, 0, 0]
-point_count = 4
-
-[sub_resource type="CurveTexture" id="CurveTexture_bb4ew"]
-curve = SubResource("Curve_k6wox")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5i06l"]
-lifetime_randomness = 0.5
-velocity_pivot = Vector3(0, 1, 0)
-direction = Vector3(0, 0, 0)
-spread = 180.0
-flatness = 1.0
-initial_velocity_min = 20.0
-initial_velocity_max = 20.0
-gravity = Vector3(0, 0, 0)
-linear_accel_min = -2.2351742e-06
-linear_accel_max = -2.2351742e-06
-scale_min = 0.5
-scale_curve = SubResource("CurveTexture_bb4ew")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bb4ew"]
-emission_enabled = true
-emission = Color(0, 1, 0, 1)
-emission_energy_multiplier = 10.0
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_5i06l"]
-material = SubResource("StandardMaterial3D_bb4ew")
-top_radius = 0.05
-bottom_radius = 0.08
-height = 0.5
 
 [node name="PressableButton" type="Area3D" unique_id=530898148]
 script = ExtResource("1_k6wox")
@@ -46,19 +15,10 @@ script = ExtResource("1_k6wox")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.20094147, 0)
 shape = SubResource("CylinderShape3D_bb4ew")
 
-[node name="Poof" type="GPUParticles3D" parent="." unique_id=838940947]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.30059743, 0)
-emitting = false
-amount = 10
-lifetime = 0.25
-one_shot = true
-explosiveness = 1.0
-transform_align = 2
-process_material = SubResource("ParticleProcessMaterial_5i06l")
-draw_pass_1 = SubResource("CylinderMesh_5i06l")
-
 [node name="Button" parent="." unique_id=1937853218 instance=ExtResource("2_5i06l")]
 transform = Transform3D(0.5130973, 0, 0, 0, 0.5130973, 0, 0, 0, 0.5130973, 0, -0.015633881, 0)
+
+[node name="Poof" parent="." unique_id=2125068792 instance=ExtResource("3_lloda")]
 
 [node name="Base" parent="." unique_id=50927718 instance=ExtResource("3_8hyi5")]
 transform = Transform3D(0.5017404, 0, 0, 0, 0.5017404, 0, 0, 0, 0.5017404, 0, 0, 0)
