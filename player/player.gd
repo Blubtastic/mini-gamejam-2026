@@ -2,17 +2,26 @@ extends RigidBody3D
 
 class_name Playable
 
+@onready var ui_start: Control = $ui_start
 @onready var camera: Node3D = $CameraPivot
-@onready var thruster_1: Node3D = $Pingvin/Particles/Thruster1
-@onready var thruster_2: Node3D = $Pingvin/Particles/Thruster2
 @onready var pingvin: Node3D = $Pingvin
 @onready var jetpack: Node3D = $Pingvin/jetpack
+@onready var thruster_1: Node3D = $Pingvin/Particles/Thruster1
+@onready var thruster_2: Node3D = $Pingvin/Particles/Thruster2
 var lerped_direction := Vector3.ZERO
 var held_cards := []
 var fuel := 0.0
 var speed_multiplier := 1.0
 @export var movement_enabled := true
 @export var jetpack_force := 40000.0
+
+
+func _ready() -> void:
+	ui_start.start_pressed.connect(on_start_pressed)
+
+func on_start_pressed() -> void:
+	enable_movement(true)
+
 
 func _physics_process(delta: float) -> void:
 	jetpack.visible = true if fuel > 0 else false

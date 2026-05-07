@@ -1,9 +1,7 @@
 [gd_scene format=3 uid="uid://n408x8i2cl2s"]
 
-[ext_resource type="Script" uid="uid://cfoqi0q5awdb0" path="res://example_level.gd" id="1_mk3jd"]
 [ext_resource type="PackedScene" uid="uid://dkqt8njibu6lw" path="res://components/office.tscn" id="2_4cogj"]
 [ext_resource type="Texture2D" uid="uid://b785hsqr5eesp" path="res://assets/art.png" id="3_56rpi"]
-[ext_resource type="PackedScene" uid="uid://daaptygweo1vh" path="res://ui/ui_start.tscn" id="4_m2tod"]
 [ext_resource type="PackedScene" uid="uid://ddh0i5oe3odgb" path="res://components/goal.tscn" id="5_bgi5i"]
 [ext_resource type="PackedScene" uid="uid://ddlocdnd8r157" path="res://player/player.tscn" id="6_31o6h"]
 [ext_resource type="PackedScene" uid="uid://c1117h5bmy35l" path="res://components/door_with_hinge.tscn" id="7_eklcc"]
@@ -24,9 +22,7 @@ albedo_texture = ExtResource("3_56rpi")
 material = SubResource("StandardMaterial3D_kek77")
 size = Vector2(3.5, 2)
 
-[node name="Main" type="Node3D" unique_id=486481499 node_paths=PackedStringArray("end")]
-script = ExtResource("1_mk3jd")
-end = NodePath("StartOrEnd")
+[node name="Main" type="Node3D" unique_id=486481499]
 
 [node name="KontoretModels" type="Node3D" parent="." unique_id=1583286276]
 
@@ -36,8 +32,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06772184, 0.08198929, 0.058
 [node name="Art" type="MeshInstance3D" parent="KontoretModels" unique_id=2066261512]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 15.573424, 1.1973183, -14.266375)
 mesh = SubResource("QuadMesh_4c57u")
-
-[node name="ui_start" parent="." unique_id=383015619 instance=ExtResource("4_m2tod")]
 
 [node name="StartOrEnd" parent="." unique_id=1431834418 instance=ExtResource("5_bgi5i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.469007, 0.043628693, -39.38382)
