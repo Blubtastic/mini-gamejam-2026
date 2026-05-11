@@ -14,7 +14,7 @@ config/name="Mini Game Jam 2026"
 config/description="Kinematic character demo for 3D using a cube for the character.
 This is similar to the 3D platformer demo."
 config/tags=PackedStringArray("3d", "demo", "official", "physics")
-run/main_scene="uid://dvcnu1a6bami0"
+run/main_scene="uid://n408x8i2cl2s"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 
 [debug]

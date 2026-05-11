@@ -14,6 +14,9 @@ sky = SubResource("Sky_kek77")
 glow_enabled = true
 adjustment_enabled = true
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_8p11n"]
+size = Vector3(500, 2, 500)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_8dpqq"]
 size = Vector3(1.3842163, 14.758179, 153.57361)
 
@@ -47,43 +50,51 @@ light_energy = 0.1
 light_bake_mode = 0
 shadow_enabled = true
 
-[node name="RightWall" type="StaticBody3D" parent="." unique_id=1421537334]
+[node name="OuterHitbox" type="Node3D" parent="." unique_id=1400986405]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RightWall" unique_id=2085950226]
+[node name="Roof" type="StaticBody3D" parent="OuterHitbox" unique_id=979922373]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.581447, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OuterHitbox/Roof" unique_id=140229150]
+shape = SubResource("BoxShape3D_8p11n")
+
+[node name="RightWall" type="StaticBody3D" parent="OuterHitbox" unique_id=1421537334]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OuterHitbox/RightWall" unique_id=2085950226]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.04977, 4.17511, -34.715538)
 shape = SubResource("BoxShape3D_8dpqq")
 
-[node name="BottomLeftWall" type="StaticBody3D" parent="." unique_id=469607411]
+[node name="BottomLeftWall" type="StaticBody3D" parent="OuterHitbox" unique_id=469607411]
 transform = Transform3D(0.6479072, 0, 0.7617192, 0, 1, 0, -0.7617192, 0, 0.6479072, -55.1681, 0, 5.5296354)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="BottomLeftWall" unique_id=238397314]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OuterHitbox/BottomLeftWall" unique_id=238397314]
 transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, 0, 0, 0.504982)
 shape = SubResource("BoxShape3D_pho7s")
 
-[node name="BottomWall" type="StaticBody3D" parent="." unique_id=676411219]
+[node name="BottomWall" type="StaticBody3D" parent="OuterHitbox" unique_id=676411219]
 transform = Transform3D(0.08998943, 0, 0.9959427, 0, 1, 0, -0.9959427, 0, 0.08998943, 7.215313, 0, 40.239723)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="BottomWall" unique_id=137308409]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OuterHitbox/BottomWall" unique_id=137308409]
 transform = Transform3D(0.9999797, 0, -0.006352961, 0, 1, 0, 0.006352961, 0, 0.9999797, 0.46565628, 0, -0.7221508)
 shape = SubResource("BoxShape3D_tp1cu")
 
-[node name="LeftWall" type="StaticBody3D" parent="." unique_id=2078987769]
+[node name="LeftWall" type="StaticBody3D" parent="OuterHitbox" unique_id=2078987769]
 transform = Transform3D(0.7761125, 0, -0.63059455, 0, 1, 0, 0.63059455, 0, 0.7761125, -59.067146, 0, -66.90835)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="LeftWall" unique_id=1687846838]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OuterHitbox/LeftWall" unique_id=1687846838]
 transform = Transform3D(1, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1, -6.1035156e-05, 0, -4.6777687)
 shape = SubResource("BoxShape3D_8j22g")
 
-[node name="TopWall" type="StaticBody3D" parent="." unique_id=1506734260]
+[node name="TopWall" type="StaticBody3D" parent="OuterHitbox" unique_id=1506734260]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.7439346, 0, -114.565025)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TopWall" unique_id=592675988]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OuterHitbox/TopWall" unique_id=592675988]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.132802)
 shape = SubResource("BoxShape3D_8xrfv")
 
-[node name="TopCornerWall" type="StaticBody3D" parent="." unique_id=1768826817]
+[node name="TopCornerWall" type="StaticBody3D" parent="OuterHitbox" unique_id=1768826817]
 transform = Transform3D(0.89650965, 0, 0.44302428, 0, 1, 0, -0.44302428, 0, 0.89650965, 29.488161, 0, -109.14225)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TopCornerWall" unique_id=1734794629]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OuterHitbox/TopCornerWall" unique_id=1734794629]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07456207, 0, -0.74352264)
 shape = SubResource("BoxShape3D_m0der")
