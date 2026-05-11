@@ -76,16 +76,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5686607, -2.1974845, -7.234
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.611416, -2.1974845, -47.99397)
 
 [node name="Door" parent="Interactables" unique_id=591335478 instance=ExtResource("7_eklcc")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.9453053, 0.16603738, -19.711151)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.0872982, 0.08836299, -18.934458)
 is_frozen = true
 
-[node name="Door2" parent="Interactables" unique_id=2139888984 instance=ExtResource("7_eklcc")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 15.937087, 0.15269357, -7.887454)
+[node name="Door2" parent="Interactables" unique_id=1229660641 instance=ExtResource("7_eklcc")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 15.593545, 0.099820554, -7.2177725)
 is_frozen = true
 open_by_card_id = 1
 
-[node name="Door3" parent="Interactables" unique_id=716159812 instance=ExtResource("7_eklcc")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 15.937087, 0.16603738, 9.949315)
+[node name="Door3" parent="Interactables" unique_id=1604290373 instance=ExtResource("7_eklcc")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 15.682399, 0.1837824, 10.522402)
 is_frozen = true
 open_by_card_id = 4
 

@@ -10,7 +10,7 @@ size = Vector3(2, 5, 3)
 size = Vector3(0.1, 4.5, 0.1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vrkb7"]
-size = Vector3(0.7, 4.361, 2.169)
+size = Vector3(0.2678644, 4.4524713, 2.3593943)
 
 [node name="Door" type="Node3D" unique_id=591335478]
 script = ExtResource("1_vrkb7")
@@ -22,28 +22,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.046875, 0, 0)
 shape = SubResource("BoxShape3D_08cvd")
 
 [node name="Hinge" type="StaticBody3D" parent="." unique_id=1097240518]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hinge" unique_id=2084856639]
 shape = SubResource("BoxShape3D_p4em4")
 
 [node name="PushableDoor" type="RigidBody3D" parent="." unique_id=1060729231]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.16155213)
 mass = 0.1
-linear_damp = 2.5
+linear_damp = 5.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PushableDoor" unique_id=1052418680]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.014755249, -0.009557724, 0.003148079)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00069591403, -0.016011477, 0.0018398762)
 shape = SubResource("BoxShape3D_vrkb7")
 
-[node name="door_model" parent="PushableDoor" unique_id=1750655630 instance=ExtResource("1_p4em4")]
+[node name="door_model" parent="PushableDoor" unique_id=186441203 instance=ExtResource("1_p4em4")]
 
 [node name="HingeJoint3D" type="HingeJoint3D" parent="." unique_id=1766153877]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 1.4)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 1.5)
 node_a = NodePath("../Hinge")
 node_b = NodePath("../PushableDoor")
 angular_limit/enable = true
-angular_limit/upper = 2.0943952
-angular_limit/lower = -2.0943952
+angular_limit/upper = 2.9670596
+angular_limit/lower = -2.9670596
 
 [connection signal="body_entered" from="DetectPlayer" to="." method="_on_detect_player_body_entered"]
