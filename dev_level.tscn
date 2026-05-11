@@ -164,3 +164,6 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.25
 
 [node name="sofa3" parent="Furniture" unique_id=997082664 instance=ExtResource("16_7fqlb")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13.241306, -2.311102, -17.013191)
+
+[node name="Door" parent="." unique_id=542849785 instance=ExtResource("7_eklcc")]
+transform = Transform3D(0.79995704, 0, -0.60005724, 0, 1, 0, 0.60005724, 0, 0.79995704, -18.911528, 0.14836013, 16.464977)
