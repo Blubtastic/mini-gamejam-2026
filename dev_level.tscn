@@ -76,7 +76,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5686607, -2.1974845, -7.234
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.611416, -2.1974845, -47.99397)
 
 [node name="Door" parent="Interactables" unique_id=591335478 instance=ExtResource("7_eklcc")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.0872982, 0.08836299, -18.934458)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.9156659, 0.07231414, -18.950537)
 is_frozen = true
 
 [node name="Door2" parent="Interactables" unique_id=1229660641 instance=ExtResource("7_eklcc")]
@@ -90,18 +90,24 @@ is_frozen = true
 open_by_card_id = 4
 
 [node name="PressableButton" parent="Interactables" unique_id=530898148 node_paths=PackedStringArray("thing_to_open") instance=ExtResource("8_hom6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.130199, -2.2695599, -16.858515)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8680248, -2.3399875, -13.707867)
 thing_to_open = NodePath("../Door")
 
 [node name="Card" parent="Interactables" unique_id=247370434 instance=ExtResource("10_5763n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.230453, -2.2732556, -11.671108)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.561263, -2.2732556, -7.193825)
 
 [node name="Card2" parent="Interactables" unique_id=551140298 instance=ExtResource("10_5763n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8329544, -2.2732575, 11.675411)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.232306, -2.2732575, 11.816675)
 card_id = 4
 
 [node name="Fuel" parent="Interactables" unique_id=62347248 instance=ExtResource("11_68kf6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.402096, -2.214045, -3.3972876)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7045403, -2.214045, 1.9797277)
+
+[node name="Fuel2" parent="Interactables" unique_id=1062759946 instance=ExtResource("11_68kf6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.347353, -2.214047, -5.68274)
+
+[node name="Fuel4" parent="Interactables" unique_id=1570947111 instance=ExtResource("11_68kf6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.937553, -2.2140431, -22.653063)
 
 [node name="Fuel3" parent="Interactables" unique_id=1692296007 instance=ExtResource("11_68kf6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.380219, -2.2140393, 12.127024)
@@ -109,49 +115,52 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.380219, -2.2140393, 12.127
 [node name="Furniture" type="Node3D" parent="." unique_id=421111947]
 
 [node name="table" parent="Furniture" unique_id=2008206320 instance=ExtResource("15_2hfll")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.6423748, -1.6253026, 3.8570323)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.6402953, -1.6253026, 5.558864)
 
 [node name="table2" parent="Furniture" unique_id=595563392 instance=ExtResource("15_2hfll")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -7.036195, -1.6253026, 3.8570323)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -7.0341153, -1.6253026, 5.558864)
 
 [node name="table3" parent="Furniture" unique_id=1124467549 instance=ExtResource("15_2hfll")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -5.4669137, -1.6253026, -2.0914824)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -6.881646, -1.6253026, -1.7187817)
 
 [node name="table4" parent="Furniture" unique_id=1532605914 instance=ExtResource("15_2hfll")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -5.4669137, -1.6253026, -6.0426464)
-
-[node name="table5" parent="Furniture" unique_id=1968655881 instance=ExtResource("15_2hfll")]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -4.0593805, -2.1552591, -14.162508)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -6.881646, -1.6253026, -5.6699457)
 
 [node name="table6" parent="Furniture" unique_id=560421696 instance=ExtResource("15_2hfll")]
-transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 11.795877, -2.15526, -14.804169)
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 12.040558, -2.15526, -15.455281)
 
 [node name="table7" parent="Furniture" unique_id=217061464 instance=ExtResource("15_2hfll")]
-transform = Transform3D(-2.1855695e-07, 0, -1, 0, 1, 0, 1, 0, -2.1855695e-07, 7.5683537, -2.15526, -11.268422)
+transform = Transform3D(-1, 0, 2.6226834e-07, 0, 1, 0, -2.6226834e-07, 0, -1, 8.39012, -2.15526, -13.863759)
 
 [node name="table8" parent="Furniture" unique_id=404868605 instance=ExtResource("15_2hfll")]
-transform = Transform3D(-2.1855695e-07, 0, -1, 0, 1, 0, 1, 0, -2.1855695e-07, 6.4783196, -2.15526, -3.136817)
+transform = Transform3D(-2.1855695e-07, 0, -1, 0, 1, 0, 1, 0, -2.1855695e-07, 7.918428, -2.1517467, -1.5159514)
 
 [node name="table9" parent="Furniture" unique_id=1577152509 instance=ExtResource("15_2hfll")]
-transform = Transform3D(-2.1855695e-07, 0, -1, 0, 1, 0, 1, 0, -2.1855695e-07, 9.478319, -2.15526, -3.136817)
+transform = Transform3D(-2.1855695e-07, 0, -1, 0, 1, 0, 1, 0, -2.1855695e-07, 10.897975, -2.15526, -1.4927909)
 
 [node name="table12" parent="Furniture" unique_id=2093863453 instance=ExtResource("15_2hfll")]
-transform = Transform3D(-2.1855695e-07, 0, -1, 0, 1, 0, 1, 0, -2.1855695e-07, 7.535167, -0.6407528, 7.548442)
+transform = Transform3D(-2.1855695e-07, 0, -1, 0, 1, 0, 1, 0, -2.1855695e-07, 7.535167, -1.6058502, 7.548442)
 
 [node name="table13" parent="Furniture" unique_id=2094965541 instance=ExtResource("15_2hfll")]
-transform = Transform3D(-2.1855695e-07, 0, -1, 0, 1, 0, 1, 0, -2.1855695e-07, 10.535167, -0.6407528, 7.548442)
+transform = Transform3D(-2.1855695e-07, 0, -1, 0, 1, 0, 1, 0, -2.1855695e-07, 10.535167, -1.6058502, 7.548442)
+
+[node name="table14" parent="Furniture" unique_id=1467206787 instance=ExtResource("15_2hfll")]
+transform = Transform3D(-2.1855695e-07, 0, -1, 0, 1, 0, 1, 0, -2.1855695e-07, 7.535167, 0.14256597, 7.548442)
+
+[node name="table15" parent="Furniture" unique_id=640396795 instance=ExtResource("15_2hfll")]
+transform = Transform3D(-2.1855695e-07, 0, -1, 0, 1, 0, 1, 0, -2.1855695e-07, 10.535167, 0.14256597, 7.548442)
 
 [node name="table10" parent="Furniture" unique_id=1741426232 instance=ExtResource("15_2hfll")]
-transform = Transform3D(-2.1855695e-07, 0, -1, 0, 1, 0, 1, 0, -2.1855695e-07, 6.5943713, -2.15526, 1.5120268)
+transform = Transform3D(-2.1855695e-07, 0, -1, 0, 1, 0, 1, 0, -2.1855695e-07, 7.8411584, -2.15526, 2.0438287)
 
 [node name="table11" parent="Furniture" unique_id=881068479 instance=ExtResource("15_2hfll")]
-transform = Transform3D(-2.1855695e-07, 0, -1, 0, 1, 0, 1, 0, -2.1855695e-07, 9.594371, -2.15526, 1.5120268)
+transform = Transform3D(-2.1855695e-07, 0, -1, 0, 1, 0, 1, 0, -2.1855695e-07, 10.811377, -2.15526, 2.0727794)
 
 [node name="sofa" parent="Furniture" unique_id=620219118 instance=ExtResource("16_7fqlb")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -6.628011, -2.311102, -12.272066)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -6.9401064, -2.311102, -16.35307)
 
 [node name="sofa2" parent="Furniture" unique_id=855370985 instance=ExtResource("16_7fqlb")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.5269284, -2.311102, -9.402859)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.255937, -2.311102, -12.263364)
 
 [node name="sofa3" parent="Furniture" unique_id=997082664 instance=ExtResource("16_7fqlb")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13.241306, -2.311102, -17.013191)
