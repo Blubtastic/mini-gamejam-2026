@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dkqt8njibu6lw"]
 
 [ext_resource type="PackedScene" uid="uid://bg3408vpjafbv" path="res://assets/teknostallen.blend" id="1_tp1cu"]
+[ext_resource type="Texture2D" uid="uid://b785hsqr5eesp" path="res://assets/art.png" id="2_pho7s"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f7s6v"]
 
@@ -41,6 +42,13 @@ size = Vector3(1.3842163, 14.758179, 47.429153)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_m0der"]
 size = Vector3(1.3842163, 14.758179, 12.093279)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kek77"]
+albedo_texture = ExtResource("2_pho7s")
+
+[sub_resource type="QuadMesh" id="QuadMesh_tp1cu"]
+material = SubResource("StandardMaterial3D_kek77")
+size = Vector2(3.5, 2)
 
 [node name="Office" type="Node3D" unique_id=1864751491]
 
@@ -105,3 +113,7 @@ transform = Transform3D(0.89650965, 0, 0.44302428, 0, 1, 0, -0.44302428, 0, 0.89
 [node name="CollisionShape3D" type="CollisionShape3D" parent="OuterHitbox/TopCornerWall" unique_id=1734794629]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07456207, 0, -0.74352264)
 shape = SubResource("BoxShape3D_m0der")
+
+[node name="Art" type="MeshInstance3D" parent="." unique_id=1111580287]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 15.408306, 1.1973183, -14.266375)
+mesh = SubResource("QuadMesh_tp1cu")
