@@ -12,6 +12,13 @@ background_mode = 2
 background_energy_multiplier = 1.2
 sky = SubResource("Sky_kek77")
 glow_enabled = true
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 0.0
+fog_sky_affect = 0.0
+fog_height = -15.0
+fog_height_density = 0.2
 adjustment_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8p11n"]
@@ -37,7 +44,7 @@ size = Vector3(1.3842163, 14.758179, 12.093279)
 
 [node name="Office" type="Node3D" unique_id=1864751491]
 
-[node name="teknostallen_office" parent="." unique_id=979171672 instance=ExtResource("1_tp1cu")]
+[node name="teknostallen_office" parent="." unique_id=1290224214 instance=ExtResource("1_tp1cu")]
 transform = Transform3D(-0.6266039, 0, -0.7793379, 0, 1, 0, 0.7793379, 0, -0.6266039, -32, -31, 60)
 
 [node name="Env" type="WorldEnvironment" parent="." unique_id=2064115845]
